@@ -1,14 +1,14 @@
 /**
  * DhakaWatch AI Image Analysis API
- * ================================
+ * =================================
  * POST /api/ai/analyze
  *
- * Analyzes uploaded environmental images using Gemini Vision
- * to detect pollution, encroachment, or erosion indicators.
+ * Proxies uploaded environmental images to n8n workflows
+ * for pollution, encroachment, and erosion assessment.
  */
 
 import { NextRequest, NextResponse } from "next/server";
-import { analyzeEnvironmentalImage } from "@/lib/gemini";
+import { analyzeImageViaN8N } from "@/lib/n8n";
 
 export async function POST(request: NextRequest) {
   try {
@@ -43,17 +43,22 @@ export async function POST(request: NextRequest) {
     const buffer = Buffer.from(bytes);
     const base64 = buffer.toString("base64");
 
-    // Analyze with Gemini
-    const analysis = await analyzeEnvironmentalImage(
-      base64,
-      image.type,
-      reportType as "pollution" | "encroachment" | "erosion" | "general",
-    );
+    const analysis = await analyzeImageViaN8N({
+      imageBase64: base64,
+      mimeType: image.type,
+      reportType: reportType as "pollution" | "encroachment" | "erosion" | "general",
+      filename: image.name,
+      filesize: image.size,
+    });
 
     return NextResponse.json({
       success: true,
       data: {
-        ...analysis,
+        analysis: analysis.analysis,
+        severity: analysis.severity,
+        confidence: analysis.confidence,
+        detectedIssues: analysis.detectedIssues,
+        recommendations: analysis.recommendations,
         filename: image.name,
         filesize: image.size,
         mimeType: image.type,

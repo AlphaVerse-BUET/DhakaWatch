@@ -4,11 +4,11 @@
  * POST /api/ai/chat
  *
  * Conversational AI assistant for environmental monitoring queries.
- * Powered by Gemini with specialized knowledge about Bangladesh rivers.
+ * Powered by n8n agent workflows and tool-calling backends.
  */
 
 import { NextRequest, NextResponse } from "next/server";
-import { chatWithNodiWatch } from "@/lib/gemini";
+import { sendChatToN8N } from "@/lib/n8n";
 
 interface ChatMessage {
   role: "user" | "model";
@@ -22,10 +22,14 @@ export async function POST(request: NextRequest) {
       message,
       history = [],
       pageContext = "",
+      currentPage = "",
+      sessionId = "",
     } = body as {
       message: string;
       history?: ChatMessage[];
       pageContext?: string;
+      currentPage?: string;
+      sessionId?: string;
     };
 
     if (!message || typeof message !== "string") {
@@ -46,17 +50,18 @@ export async function POST(request: NextRequest) {
     // Limit conversation history
     const limitedHistory = history.slice(-10);
 
-    // Get AI response with optional page context
-    const response = await chatWithNodiWatch(
+    const response = await sendChatToN8N({
       message,
-      limitedHistory,
+      history: limitedHistory,
       pageContext,
-    );
+      currentPage,
+      sessionId,
+    });
 
     return NextResponse.json({
       success: true,
       data: {
-        message: response,
+        message: response.message,
         timestamp: new Date().toISOString(),
       },
     });

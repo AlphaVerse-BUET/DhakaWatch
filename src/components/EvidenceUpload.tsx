@@ -259,6 +259,9 @@ export default function EvidenceUpload({
             />
             <button
               onClick={clearFile}
+              type="button"
+              aria-label="Remove selected image"
+              title="Remove selected image"
               className="absolute top-3 right-3 p-2 rounded-full bg-slate-900/80 hover:bg-slate-900 transition-colors"
             >
               <X className="w-5 h-5 text-white" />
@@ -301,7 +304,12 @@ export default function EvidenceUpload({
               <span>Get Current Location</span>
             )}
           </button>
-          <button className="px-4 py-3 rounded-xl border border-slate-700 bg-slate-800/50 text-slate-300 hover:border-slate-600 transition-all">
+          <button
+            type="button"
+            aria-label="Select location on map"
+            title="Select location on map"
+            className="px-4 py-3 rounded-xl border border-slate-700 bg-slate-800/50 text-slate-300 hover:border-slate-600 transition-all"
+          >
             <MapPin className="w-5 h-5" />
           </button>
         </div>
@@ -331,7 +339,7 @@ export default function EvidenceUpload({
           {isAnalyzing ? (
             <>
               <Loader2 className="w-5 h-5 animate-spin" />
-              <span>Analyzing with Gemini AI...</span>
+              <span>Analyzing with AI workflow...</span>
             </>
           ) : (
             <>

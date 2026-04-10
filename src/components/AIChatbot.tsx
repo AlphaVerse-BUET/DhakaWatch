@@ -4,7 +4,7 @@
  * DhakaWatch AI Chatbot
  * ====================
  * Floating chatbot widget that appears on all pages.
- * Powered by Gemini AI with specialized environmental knowledge.
+ * Powered by n8n-orchestrated AI workflows and data tools.
  * Page-aware: injects current page context into each query.
  */
 
@@ -23,7 +23,7 @@ import {
   Maximize2,
   Minimize2,
 } from "lucide-react";
-import { suggestedQuestions } from "@/lib/gemini";
+import { suggestedQuestions } from "@/lib/chatSuggestions";
 
 interface Message {
   id: string;
@@ -57,7 +57,7 @@ const PAGE_CONTEXT: Record<string, { name: string; description: string }> = {
   "/evidence": {
     name: "Citizen Reports",
     description:
-      "The citizen ground-truth reporting platform. Users can upload geo-tagged photos of pollution, encroachment, or erosion. Gemini Vision AI analyzes each image for environmental assessment.",
+      "The citizen ground-truth reporting platform. Users can upload geo-tagged photos of pollution, encroachment, or erosion. n8n-orchestrated AI analysis evaluates each image for environmental assessment.",
   },
   "/analysis": {
     name: "Trend Analysis",
@@ -112,6 +112,7 @@ export default function AIChatbot() {
   const [input, setInput] = useState("");
   const [isLoading, setIsLoading] = useState(false);
   const [showSuggestions, setShowSuggestions] = useState(true);
+  const sessionIdRef = useRef<string>("");
   const messagesEndRef = useRef<HTMLDivElement>(null);
   const inputRef = useRef<HTMLInputElement>(null);
 
@@ -126,6 +127,21 @@ export default function AIChatbot() {
       inputRef.current?.focus();
     }
   }, [isOpen]);
+
+  useEffect(() => {
+    const key = "dhakawatch_n8n_session_id";
+    let sessionId = localStorage.getItem(key);
+
+    if (!sessionId) {
+      sessionId =
+        typeof crypto !== "undefined" && "randomUUID" in crypto
+          ? crypto.randomUUID()
+          : `dw-${Date.now()}-${Math.random().toString(36).slice(2, 10)}`;
+      localStorage.setItem(key, sessionId);
+    }
+
+    sessionIdRef.current = sessionId;
+  }, []);
 
   const currentPage = PAGE_CONTEXT[pathname] || {
     name: "DhakaWatch",
@@ -171,6 +187,7 @@ export default function AIChatbot() {
             })),
           pageContext: buildPageContext(),
           currentPage: pathname,
+          sessionId: sessionIdRef.current,
         }),
       });
 

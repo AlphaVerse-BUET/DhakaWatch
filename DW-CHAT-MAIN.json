@@ -1,0 +1,757 @@
+{
+  "name": "DW-CHAT-MAIN",
+  "nodes": [
+    {
+      "parameters": {
+        "public": true,
+        "initialMessages": "আসসালামু আলাইকুম! I'm DhakaWatch AI, your assistant for air quality and pollution data in Dhaka and Bangladesh. Ask me about pollution levels, satellite verification, or area comparisons. 🌍",
+        "options": {
+          "allowedOrigins": "https://dhakawatch.onrender.com/,https://dhakawatch.vercel.app,https://www.dhakawatch.org",
+          "loadPreviousSession": "memory"
+        }
+      },
+      "id": "f077ddad-b6f3-46bf-9052-8ad2c98364fb",
+      "name": "Chat Trigger",
+      "type": "@n8n/n8n-nodes-langchain.chatTrigger",
+      "typeVersion": 1.4,
+      "position": [
+        -448,
+        1040
+      ],
+      "webhookId": "94398073-8e77-4d60-9875-b4f02d53cd41"
+    },
+    {
+      "parameters": {
+        "hasOutputParser": true,
+        "options": {
+          "systemMessage": "You are DhakaWatch AI, an environmental data assistant for Dhaka and Bangladesh.\n\nCORE RULES:\n1. DHAKA-FIRST DEFAULTS: If user mentions area without country context, assume Dhaka, Bangladesh (lat: 23.8103, lng: 90.4125)\n2. BANGLADESH BOUNDS GUARDRAIL: Only provide data for locations within Bangladesh (lat: 20.5-26.6, lng: 88.0-92.7). Politely decline requests outside Bangladesh.\n3. ALWAYS CITE SOURCE + TIMESTAMP: Every answer must include data source and freshness date\n4. DATA PROVENANCE TRANSPARENCY: If data is heuristic/simulated (not real sensor data), explicitly state \"This is modeled/estimated data, not direct measurements\"\n5. RESPONSE SCHEMA: Always return structured JSON with: answer, area_resolved, key_metrics, source_list, data_timestamp, confidence\n6. NO REAL-TIME SENTINEL-2 CLAIMS: Do not claim to provide live Sentinel-2 satellite imagery or thermal tracking. Link to verification endpoints instead.\n7. TRIAGE-LEVEL LANGUAGE: Provide informational responses only. Do not make medical diagnoses or emergency health recommendations.\n\nQUERY TYPES:\n- Quick fact: Direct answer with source\n- Geo query: Resolve area to coordinates, fetch pollution context using available tools\n- Satellite verification: Link to verification endpoint, don't run heavy computation synchronously\n- Trend/explanation: Provide context with clear data limitations\n\nAVAILABLE TOOLS:\n- Pollution API Tool: Fetch pollution attribution data for a lat/lng coordinate - returns ranked factory sources\n- Factories API Tool: Fetch real OSM industrial facilities near a lat/lng - returns factory names and industry types\n- Waterways API Tool: Fetch river and canal geometries near a lat/lng - returns waterway names and shapes\n\nLANGUAGE: Support both Bengali and English queries. Respond in the language used by the user.\n\nERROR HANDLING: If tools fail, provide helpful fallback message within 2 seconds. Never expose internal API errors to users."
+        }
+      },
+      "id": "a965ff40-ef71-42fd-838d-759ead96694a",
+      "name": "DhakaWatch AI Agent",
+      "type": "@n8n/n8n-nodes-langchain.agent",
+      "typeVersion": 3.1,
+      "position": [
+        248,
+        832
+      ]
+    },
+    {
+      "parameters": {
+        "modelName": "models/gemini-flash-latest",
+        "options": {
+          "temperature": 0.3
+        }
+      },
+      "id": "925adf84-9307-4660-8aed-9d0ac7cf06f7",
+      "name": "Gemini Chat Model",
+      "type": "@n8n/n8n-nodes-langchain.lmChatGoogleGemini",
+      "typeVersion": 1,
+      "position": [
+        380,
+        1264
+      ],
+      "credentials": {
+        "googlePalmApi": {
+          "id": "m2CW1wb26sThFBti",
+          "name": "Google Gemini(PaLM) Api account 2"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "contextWindowLength": 10
+      },
+      "id": "23c4d3f5-3c60-4d29-8e9f-0affe519d442",
+      "name": "Conversation Memory",
+      "type": "@n8n/n8n-nodes-langchain.memoryBufferWindow",
+      "typeVersion": 1.3,
+      "position": [
+        128,
+        1056
+      ]
+    },
+    {
+      "parameters": {
+        "schemaType": "manual",
+        "inputSchema": "{\n\t\"type\": \"object\",\n\t\"properties\": {\n\t\t\"answer\": {\n\t\t\t\"type\": \"string\",\n\t\t\t\"description\": \"Natural language answer to user query\"\n\t\t},\n\t\t\"area_resolved\": {\n\t\t\t\"type\": \"object\",\n\t\t\t\"properties\": {\n\t\t\t\t\"name\": {\"type\": \"string\"},\n\t\t\t\t\"lat\": {\"type\": \"number\"},\n\t\t\t\t\"lng\": {\"type\": \"number\"},\n\t\t\t\t\"bbox\": {\"type\": \"array\", \"items\": {\"type\": \"number\"}}\n\t\t\t},\n\t\t\t\"description\": \"Resolved geographic area with coordinates\"\n\t\t},\n\t\t\"key_metrics\": {\n\t\t\t\"type\": \"object\",\n\t\t\t\"description\": \"Primary pollution/air quality metrics relevant to query\"\n\t\t},\n\t\t\"source_list\": {\n\t\t\t\"type\": \"array\",\n\t\t\t\"items\": {\"type\": \"string\"},\n\t\t\t\"description\": \"List of data sources used (API names, sensor networks, etc.)\"\n\t\t},\n\t\t\"data_timestamp\": {\n\t\t\t\"type\": \"string\",\n\t\t\t\"description\": \"ISO timestamp of data freshness\"\n\t\t},\n\t\t\"confidence\": {\n\t\t\t\"type\": \"string\",\n\t\t\t\"enum\": [\"high\", \"medium\", \"low\"],\n\t\t\t\"description\": \"Confidence level in answer accuracy\"\n\t\t}\n\t},\n\t\"required\": [\"answer\", \"source_list\", \"data_timestamp\", \"confidence\"]\n}",
+        "autoFix": true
+      },
+      "id": "63c36b49-9b67-4385-b593-4b239e785421",
+      "name": "Response Schema Parser",
+      "type": "@n8n/n8n-nodes-langchain.outputParserStructured",
+      "typeVersion": 1.3,
+      "position": [
+        640,
+        1056
+      ]
+    },
+    {
+      "parameters": {
+        "jsCode": "const chatInput = $input.item.json.chatInput || '';\nconst maxLength = 2000;\nconst outOfDomainKeywords = ['weather forecast', 'stock price', 'sports score', 'movie recommendation', 'recipe', 'translate', 'math homework'];\n\n// Check prompt length\nif (chatInput.length > maxLength) {\n  return [{\n    json: {\n      error: 'prompt_too_long',\n      message: 'Your message is too long. Please keep it under 2000 characters.',\n      reject: true\n    }\n  }];\n}\n\n// Check for out-of-domain queries\nconst lowerInput = chatInput.toLowerCase();\nconst isOutOfDomain = outOfDomainKeywords.some(keyword => lowerInput.includes(keyword));\n\nif (isOutOfDomain) {\n  return [{\n    json: {\n      error: 'out_of_domain',\n      message: 'I can only help with air quality and pollution data for Bangladesh. Please ask about pollution levels, factories, or waterways.',\n      reject: true\n    }\n  }];\n}\n\n// Pass through if valid\nreturn $input.all();"
+      },
+      "id": "080655b7-b1f6-4a4a-9110-c0bf43b9e891",
+      "name": "Safety Validation",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        -96,
+        1040
+      ]
+    },
+    {
+      "parameters": {
+        "toolDescription": "Fetches pollution attribution data for a specific location. Requires lat, lng, and optional radius_km and pollution_type parameters.",
+        "url": "=https://dhakawatch.onrender.com/api/attribution?lat={{ $fromAI('lat', 'Latitude coordinate', 'number') }}&lng={{ $fromAI('lng', 'Longitude coordinate', 'number') }}&radius_km={{ $fromAI('radius_km', 'Attribution radius in km', 'number', 2) }}&pollution_type={{ $fromAI('pollution_type', 'Pollution type: mixed, high_organic, high_dye', 'string', 'mixed') }}",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "X-Internal-Auth",
+              "value": "dw-agent-bypass"
+            }
+          ]
+        },
+        "options": {
+          "timeout": 10000
+        }
+      },
+      "id": "dfdd3a6a-d71d-4364-a55c-230fa1809d24",
+      "name": "Pollution API Tool",
+      "type": "n8n-nodes-base.httpRequestTool",
+      "typeVersion": 4.4,
+      "position": [
+        256,
+        1056
+      ]
+    },
+    {
+      "parameters": {
+        "toolDescription": "Fetches real industrial facilities from OpenStreetMap for a given location. Pass lat, lng, and optional radius in km. Returns factory names, industry types, and coordinates.",
+        "url": "=https://dhakawatch.onrender.com/api/factories?lat={{ $fromAI('lat', 'Latitude coordinate', 'number') }}&lng={{ $fromAI('lng', 'Longitude coordinate', 'number') }}&radius={{ $fromAI('radius', 'Search radius in km', 'number', 10) }}",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "X-Internal-Auth",
+              "value": "dw-agent-bypass"
+            }
+          ]
+        },
+        "options": {
+          "timeout": 10000
+        }
+      },
+      "id": "fec6220e-b241-4d6e-807b-f515461eb376",
+      "name": "Factories API Tool",
+      "type": "n8n-nodes-base.httpRequestTool",
+      "typeVersion": 4.4,
+      "position": [
+        384,
+        1056
+      ]
+    },
+    {
+      "parameters": {
+        "toolDescription": "Fetches river and waterway data for a point. Pass lat (latitude), lng (longitude), and optional radius in km (default 10km). Returns OSM waterway geometries.",
+        "url": "=https://dhakawatch.onrender.com/api/waterways?lat={{ $fromAI('lat', 'Latitude coordinate', 'number') }}&lng={{ $fromAI('lng', 'Longitude coordinate', 'number') }}&radius={{ $fromAI('radius', 'Search radius in km', 'number', 10) }}",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "X-Internal-Auth",
+              "value": "dw-agent-bypass"
+            }
+          ]
+        },
+        "options": {
+          "timeout": 10000
+        }
+      },
+      "id": "a5d738b2-52c2-4e10-a521-479d032d877b",
+      "name": "Waterways API Tool",
+      "type": "n8n-nodes-base.httpRequestTool",
+      "typeVersion": 4.4,
+      "position": [
+        512,
+        1056
+      ]
+    },
+    {
+      "parameters": {
+        "httpMethod": "POST",
+        "path": "analyze-image",
+        "responseMode": "responseNode",
+        "options": {
+          "rawBody": true
+        }
+      },
+      "id": "9016690b-b715-4ba2-8c9a-632b819dbfe4",
+      "name": "Image Upload Webhook",
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 2.1,
+      "position": [
+        -448,
+        1472
+      ],
+      "webhookId": "8ccba792-ea71-4978-bb58-4a82ed1b15a2"
+    },
+    {
+      "parameters": {
+        "jsCode": "const body = $input.item.json.body || {};\nconst allowedTypes = ['image/jpeg', 'image/png', 'image/webp'];\nconst maxSize = 10 * 1024 * 1024; // 10MB\n\n// Check if image data exists\nif (!body.image && !$input.item.binary.data) {\n  return [{\n    json: {\n      error: 'missing_image',\n      message: 'No image provided. Please upload an image file.',\n      valid: false\n    }\n  }];\n}\n\n// Check file type if provided\nif (body.mimeType && !allowedTypes.includes(body.mimeType)) {\n  return [{\n    json: {\n      error: 'invalid_type',\n      message: 'Invalid image type. Only JPEG, PNG, and WebP are supported.',\n      valid: false\n    }\n  }];\n}\n\n// Check file size if provided\nif (body.size && body.size > maxSize) {\n  return [{\n    json: {\n      error: 'file_too_large',\n      message: 'Image file is too large. Maximum size is 10MB.',\n      valid: false\n    }\n  }];\n}\n\n// Pass through if valid\nreturn [{\n  json: {\n    ...body,\n    valid: true\n  }\n}];"
+      },
+      "id": "8d9b69f0-1c5b-4ff5-bb5d-c34abc7a6cab",
+      "name": "Validate Image Upload",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        -224,
+        1472
+      ]
+    },
+    {
+      "parameters": {
+        "resource": "image",
+        "operation": "analyze",
+        "modelId": {
+          "__rl": true,
+          "mode": "id",
+          "value": "models/gemini-1.5-flash"
+        },
+        "text": "Analyze this environmental image from Bangladesh. Identify: 1) Visible pollution sources (smoke, waste, water contamination), 2) Environmental features (rivers, factories, urban areas), 3) Approximate location type (industrial, residential, waterway), 4) Pollution severity (none/low/moderate/high). Return structured JSON with these fields.",
+        "options": {
+          "maxOutputTokens": 300
+        }
+      },
+      "id": "37987318-7f5b-4492-8447-d016a4f0e76c",
+      "name": "Gemini Vision Analysis",
+      "type": "@n8n/n8n-nodes-langchain.googleGemini",
+      "typeVersion": 1.1,
+      "position": [
+        0,
+        1472
+      ],
+      "credentials": {
+        "googlePalmApi": {
+          "id": "srf2myHbOMlKM4Sv",
+          "name": "Google Gemini(PaLM) Api account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "jsCode": "const analysis = $input.item.json.message?.content || $input.item.json.text || '';\nconst prohibitedClaims = [\n  'real-time sentinel',\n  'live satellite',\n  'thermal tracking',\n  'infrared detection',\n  'satellite imagery analysis'\n];\n\nconst lowerAnalysis = analysis.toLowerCase();\nconst hasProhibitedClaim = prohibitedClaims.some(claim => lowerAnalysis.includes(claim));\n\nif (hasProhibitedClaim) {\n  return [{\n    json: {\n      analysis: analysis,\n      warning: 'Analysis contains prohibited claims about real-time satellite capabilities',\n      filtered: true,\n      result: 'This analysis is based on visual inspection only. DhakaWatch does not provide real-time satellite imagery or thermal tracking.'\n    }\n  }];\n}\n\nreturn [{\n  json: {\n    analysis: analysis,\n    filtered: false\n  }\n}];"
+      },
+      "id": "ba9598c4-cfa2-43c6-aeb9-a3c7d73b3b52",
+      "name": "Check Prohibited Claims",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        224,
+        1472
+      ]
+    },
+    {
+      "parameters": {
+        "respondWith": "json",
+        "responseBody": "={{ { success: true, analysis: $json.analysis, filtered: $json.filtered, timestamp: new Date().toISOString() } }}",
+        "options": {}
+      },
+      "id": "b4df9470-bce1-49b9-98f1-3cafd61f1942",
+      "name": "Return Analysis Results",
+      "type": "n8n-nodes-base.respondToWebhook",
+      "typeVersion": 1.5,
+      "position": [
+        448,
+        1472
+      ]
+    },
+    {
+      "parameters": {
+        "httpMethod": "POST",
+        "path": "generate-report",
+        "responseMode": "responseNode",
+        "options": {}
+      },
+      "id": "e0ae5db5-c7c1-49a7-8d6b-3c9af8616989",
+      "name": "Report Generation Webhook",
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 2.1,
+      "position": [
+        -448,
+        192
+      ],
+      "webhookId": "0f64b509-39df-478a-9962-e67ebc204175"
+    },
+    {
+      "parameters": {
+        "jsCode": "const body = $input.item.json.body || {};\nconst reportType = body.reportType || 'summary';\nconst area = body.area || 'Dhaka';\nconst dateRange = body.dateRange || 'last_30_days';\n\nreturn [{\n  json: {\n    reportType,\n    area,\n    dateRange,\n    timestamp: new Date().toISOString()\n  }\n}];"
+      },
+      "id": "e8ac778c-a086-4ae8-ade2-e590e69c2f67",
+      "name": "Parse Report Request",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        -224,
+        192
+      ]
+    },
+    {
+      "parameters": {
+        "url": "https://dhakawatch.onrender.com/api/stats",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "X-Internal-Auth",
+              "value": "dw-agent-bypass"
+            }
+          ]
+        },
+        "options": {
+          "timeout": 10000
+        }
+      },
+      "id": "a7b569bf-3b46-40de-a163-2d1bf111ec38",
+      "name": "Fetch Stats Data",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.4,
+      "position": [
+        0,
+        192
+      ]
+    },
+    {
+      "parameters": {
+        "url": "https://dhakawatch.onrender.com/api/analytics/ward-scores",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "X-Internal-Auth",
+              "value": "dw-agent-bypass"
+            }
+          ]
+        },
+        "options": {
+          "timeout": 10000
+        }
+      },
+      "id": "dc95d326-d7fe-44db-9873-1617124a11e3",
+      "name": "Fetch Ward Scores",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.4,
+      "position": [
+        0,
+        384
+      ]
+    },
+    {
+      "parameters": {
+        "url": "=https://dhakawatch.onrender.com/api/attribution?lat={{ $json.lat || 23.8103 }}&lng={{ $json.lng || 90.4125 }}&radius_km={{ $json.radius_km || 2 }}&pollution_type={{ $json.pollution_type || 'mixed' }}",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "X-Internal-Auth",
+              "value": "dw-agent-bypass"
+            }
+          ]
+        },
+        "options": {
+          "timeout": 10000
+        }
+      },
+      "id": "0537f3fa-e551-41fb-86f5-792a17239300",
+      "name": "Fetch Attribution Data",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.4,
+      "position": [
+        0,
+        0
+      ]
+    },
+    {
+      "parameters": {
+        "mode": "combine",
+        "combineBy": "combineByPosition",
+        "numberInputs": 3,
+        "options": {}
+      },
+      "id": "a29de4dc-e7ae-4514-b95b-f065f7fcd0f1",
+      "name": "Combine Data Sources",
+      "type": "n8n-nodes-base.merge",
+      "typeVersion": 3.2,
+      "position": [
+        224,
+        176
+      ]
+    },
+    {
+      "parameters": {
+        "modelId": {
+          "__rl": true,
+          "mode": "id",
+          "value": "models/gemini-1.5-flash"
+        },
+        "messages": {
+          "values": [
+            {
+              "content": "={{ 'Generate a structured environmental report for ' + $json.area + ' based on the following data:\\n\\nStats: ' + JSON.stringify($json.stats) + '\\n\\nWard Scores: ' + JSON.stringify($json.wardScores) + '\\n\\nAttribution: ' + JSON.stringify($json.attribution) + '\\n\\nFormat as a professional report with sections: Executive Summary, Key Metrics, Ward Analysis, Pollution Sources, and Recommendations. Use clear headings and bullet points.' }}"
+            }
+          ]
+        },
+        "builtInTools": {},
+        "options": {
+          "temperature": 0.3
+        }
+      },
+      "id": "526d437c-fbb3-4080-ac91-061e3ff28177",
+      "name": "Format Report with Gemini",
+      "type": "@n8n/n8n-nodes-langchain.googleGemini",
+      "typeVersion": 1.1,
+      "position": [
+        448,
+        192
+      ],
+      "credentials": {
+        "googlePalmApi": {
+          "id": "srf2myHbOMlKM4Sv",
+          "name": "Google Gemini(PaLM) Api account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "respondWith": "json",
+        "responseBody": "={{ { success: true, report: $json.message?.content || $json.text, reportType: $('Parse Report Request').item.json.reportType, area: $('Parse Report Request').item.json.area, generatedAt: new Date().toISOString() } }}",
+        "options": {}
+      },
+      "id": "d4a7e3ba-f611-48db-beba-b527a52998c2",
+      "name": "Return Report",
+      "type": "n8n-nodes-base.respondToWebhook",
+      "typeVersion": 1.5,
+      "position": [
+        800,
+        192
+      ]
+    },
+    {
+      "parameters": {},
+      "id": "4ebac153-088a-452b-927b-566bbedd428d",
+      "name": "Error Trigger",
+      "type": "n8n-nodes-base.errorTrigger",
+      "typeVersion": 1,
+      "position": [
+        -448,
+        608
+      ]
+    },
+    {
+      "parameters": {
+        "jsCode": "const error = $input.item.json.error || {};\nconst execution = $input.item.json.execution || {};\nconst workflow = $input.item.json.workflow || {};\n\nconst errorMessage = error.message || 'Unknown error';\nconst nodeName = error.node?.name || 'Unknown node';\nconst workflowName = workflow.name || 'Unknown workflow';\nconst executionId = execution.id || 'Unknown';\nconst timestamp = new Date().toISOString();\n\nconst alertText = `🚨 *DhakaWatch Workflow Error*\\n\\n*Workflow:* ${workflowName}\\n*Node:* ${nodeName}\\n*Error:* ${errorMessage}\\n*Execution ID:* ${executionId}\\n*Time:* ${timestamp}\\n\\nPlease investigate immediately.`;\n\nreturn [{\n  json: {\n    alertText,\n    workflowName,\n    nodeName,\n    errorMessage,\n    executionId,\n    timestamp\n  }\n}];"
+      },
+      "id": "959487c7-f2c9-4c1b-8dab-d4aa249d6d93",
+      "name": "Format Error Details",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        -224,
+        608
+      ]
+    },
+    {
+      "parameters": {
+        "authentication": "oAuth2",
+        "select": "channel",
+        "channelId": {
+          "__rl": true,
+          "value": "C0ASFHKQ317",
+          "mode": "id"
+        },
+        "text": "={{ $json.alertText }}",
+        "otherOptions": {}
+      },
+      "id": "74229329-bbf7-44b7-ba57-da6ae41436c3",
+      "name": "Send Slack Alert",
+      "type": "n8n-nodes-base.slack",
+      "typeVersion": 2.4,
+      "position": [
+        0,
+        608
+      ],
+      "webhookId": "4779f6f1-8d80-4946-8de5-4e5ce1f5d118",
+      "credentials": {
+        "slackOAuth2Api": {
+          "id": "n75GlSpxQXQjSui1",
+          "name": "Slack account"
+        }
+      }
+    }
+  ],
+  "pinData": {},
+  "connections": {
+    "Chat Trigger": {
+      "main": [
+        [
+          {
+            "node": "Safety Validation",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Gemini Chat Model": {
+      "ai_languageModel": [
+        [
+          {
+            "node": "DhakaWatch AI Agent",
+            "type": "ai_languageModel",
+            "index": 0
+          },
+          {
+            "node": "Response Schema Parser",
+            "type": "ai_languageModel",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Conversation Memory": {
+      "ai_memory": [
+        [
+          {
+            "node": "DhakaWatch AI Agent",
+            "type": "ai_memory",
+            "index": 0
+          },
+          {
+            "node": "Chat Trigger",
+            "type": "ai_memory",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Response Schema Parser": {
+      "ai_outputParser": [
+        [
+          {
+            "node": "DhakaWatch AI Agent",
+            "type": "ai_outputParser",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Safety Validation": {
+      "main": [
+        [
+          {
+            "node": "DhakaWatch AI Agent",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Pollution API Tool": {
+      "ai_tool": [
+        [
+          {
+            "node": "DhakaWatch AI Agent",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Factories API Tool": {
+      "ai_tool": [
+        [
+          {
+            "node": "DhakaWatch AI Agent",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Waterways API Tool": {
+      "ai_tool": [
+        [
+          {
+            "node": "DhakaWatch AI Agent",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Image Upload Webhook": {
+      "main": [
+        [
+          {
+            "node": "Validate Image Upload",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Validate Image Upload": {
+      "main": [
+        [
+          {
+            "node": "Gemini Vision Analysis",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Gemini Vision Analysis": {
+      "main": [
+        [
+          {
+            "node": "Check Prohibited Claims",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Check Prohibited Claims": {
+      "main": [
+        [
+          {
+            "node": "Return Analysis Results",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Report Generation Webhook": {
+      "main": [
+        [
+          {
+            "node": "Parse Report Request",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Parse Report Request": {
+      "main": [
+        [
+          {
+            "node": "Fetch Stats Data",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "Fetch Ward Scores",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "Fetch Attribution Data",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Fetch Stats Data": {
+      "main": [
+        [
+          {
+            "node": "Combine Data Sources",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Fetch Ward Scores": {
+      "main": [
+        [
+          {
+            "node": "Combine Data Sources",
+            "type": "main",
+            "index": 1
+          }
+        ]
+      ]
+    },
+    "Fetch Attribution Data": {
+      "main": [
+        [
+          {
+            "node": "Combine Data Sources",
+            "type": "main",
+            "index": 2
+          }
+        ]
+      ]
+    },
+    "Combine Data Sources": {
+      "main": [
+        [
+          {
+            "node": "Format Report with Gemini",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Format Report with Gemini": {
+      "main": [
+        [
+          {
+            "node": "Return Report",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Error Trigger": {
+      "main": [
+        [
+          {
+            "node": "Format Error Details",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Format Error Details": {
+      "main": [
+        [
+          {
+            "node": "Send Slack Alert",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "active": false,
+  "settings": {
+    "executionOrder": "v1",
+    "binaryMode": "separate"
+  },
+  "versionId": "93c01b0b-c0b3-4406-bb53-281989f3e1d9",
+  "meta": {
+    "instanceId": "ebbbb8193d7db1f3b7af7468d17fa1fa2919a89498fe34cb76ff1c7aa2adac1d"
+  },
+  "id": "h2jc2KjjURnrC6lF",
+  "tags": []
+}

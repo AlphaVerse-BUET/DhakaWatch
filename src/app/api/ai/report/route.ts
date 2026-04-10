@@ -3,11 +3,11 @@
  * =================================
  * POST /api/ai/report
  *
- * Generates formal evidence report summaries for regulatory submission.
+ * Generates formal evidence report summaries via n8n workflows.
  */
 
 import { NextRequest, NextResponse } from "next/server";
-import { generateReportSummary } from "@/lib/gemini";
+import { generateReportViaN8N } from "@/lib/n8n";
 
 export async function POST(request: NextRequest) {
   try {
@@ -21,7 +21,7 @@ export async function POST(request: NextRequest) {
       );
     }
 
-    const summary = await generateReportSummary({
+    const result = await generateReportViaN8N({
       type,
       location,
       date: date || new Date().toISOString(),
@@ -33,7 +33,7 @@ export async function POST(request: NextRequest) {
     return NextResponse.json({
       success: true,
       data: {
-        summary,
+        summary: result.summary,
         generatedAt: new Date().toISOString(),
       },
     });

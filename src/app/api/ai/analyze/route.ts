@@ -46,7 +46,11 @@ export async function POST(request: NextRequest) {
     const analysis = await analyzeImageViaN8N({
       imageBase64: base64,
       mimeType: image.type,
-      reportType: reportType as "pollution" | "encroachment" | "erosion" | "general",
+      reportType: reportType as
+        | "pollution"
+        | "encroachment"
+        | "erosion"
+        | "general",
       filename: image.name,
       filesize: image.size,
     });

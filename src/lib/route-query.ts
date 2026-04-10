@@ -17,10 +17,7 @@ export function parseNumberParam(value: string | null) {
   return Number.isFinite(parsed) ? parsed : null;
 }
 
-export function parseIntegerParam(
-  value: string | null,
-  fallback: number,
-) {
+export function parseIntegerParam(value: string | null, fallback: number) {
   if (value == null || value === "") {
     return fallback;
   }
@@ -39,14 +36,10 @@ export function parseRequiredBBox(searchParams: URLSearchParams) {
   const north = parseNumberParam(searchParams.get("north"));
   const east = parseNumberParam(searchParams.get("east"));
 
-  if (
-    south == null ||
-    west == null ||
-    north == null ||
-    east == null
-  ) {
+  if (south == null || west == null || north == null || east == null) {
     return {
-      error: "Missing or invalid bbox parameters (south, west, north, east required)",
+      error:
+        "Missing or invalid bbox parameters (south, west, north, east required)",
     } as const;
   }
 
@@ -114,7 +107,8 @@ export function parseOptionalLatLngRadius(
 
   if (lat == null || lng == null) {
     return {
-      error: "lat and lng must be valid numbers when using point-radius queries",
+      error:
+        "lat and lng must be valid numbers when using point-radius queries",
     } as const;
   }
 

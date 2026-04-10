@@ -32,9 +32,7 @@ export async function GET(request: NextRequest) {
   let hotspots =
     cached?.hotspots ??
     generatePollutionHotspots(
-      cachedFactories.length > 0
-        ? cachedFactories
-        : await fetchRealFactories(),
+      cachedFactories.length > 0 ? cachedFactories : await fetchRealFactories(),
     );
 
   if (river) {
@@ -46,7 +44,12 @@ export async function GET(request: NextRequest) {
   if (pointRadius) {
     hotspots = hotspots.filter(
       (hotspot) =>
-        haversineDistance(pointRadius.lat, pointRadius.lng, hotspot.lat, hotspot.lng) <=
+        haversineDistance(
+          pointRadius.lat,
+          pointRadius.lng,
+          hotspot.lat,
+          hotspot.lng,
+        ) <=
         pointRadius.radiusKm * 1000,
     );
   }

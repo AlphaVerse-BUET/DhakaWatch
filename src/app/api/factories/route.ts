@@ -55,7 +55,10 @@ export async function GET(request: NextRequest) {
     return NextResponse.json({ detail: pointRadius.error }, { status: 400 });
   }
 
-  if (hasAnyBBoxParam && [south, west, north, east].some((value) => value == null)) {
+  if (
+    hasAnyBBoxParam &&
+    [south, west, north, east].some((value) => value == null)
+  ) {
     return NextResponse.json(
       { detail: "south, west, north, and east must all be valid numbers" },
       { status: 400 },
@@ -66,7 +69,11 @@ export async function GET(request: NextRequest) {
     south != null && west != null && north != null && east != null
       ? { south, west, north, east }
       : pointRadius
-        ? bboxFromLatLngRadius(pointRadius.lat, pointRadius.lng, pointRadius.radiusKm)
+        ? bboxFromLatLngRadius(
+            pointRadius.lat,
+            pointRadius.lng,
+            pointRadius.radiusKm,
+          )
         : null;
 
   if (queryBBox) {
@@ -107,7 +114,11 @@ export async function GET(request: NextRequest) {
       "real_factories.json",
     );
     if (cached) {
-      const factories = applyFactoryFilters(cached.factories ?? [], river, industry);
+      const factories = applyFactoryFilters(
+        cached.factories ?? [],
+        river,
+        industry,
+      );
       return NextResponse.json({
         factories,
         total: factories.length,
@@ -117,7 +128,13 @@ export async function GET(request: NextRequest) {
   }
 
   const factories = applyFactoryFilters(
-    await fetchRealFactories(undefined, undefined, undefined, undefined, maxDistance),
+    await fetchRealFactories(
+      undefined,
+      undefined,
+      undefined,
+      undefined,
+      maxDistance,
+    ),
     river,
     industry,
   );

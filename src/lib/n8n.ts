@@ -128,7 +128,8 @@ function extractMessage(payload: unknown): string | null {
 
       if (direct && typeof direct === "object") {
         const nested = direct as Record<string, unknown>;
-        const fromContent = coerceString(nested.content) || coerceString(nested.text);
+        const fromContent =
+          coerceString(nested.content) || coerceString(nested.text);
         if (fromContent) {
           return fromContent;
         }
@@ -157,13 +158,20 @@ function readStringArray(value: unknown): string[] {
     .filter((item) => item.length > 0);
 }
 
-function normalizeSeverity(value: unknown): "low" | "medium" | "high" | "critical" {
+function normalizeSeverity(
+  value: unknown,
+): "low" | "medium" | "high" | "critical" {
   if (typeof value !== "string") {
     return "medium";
   }
 
   const lower = value.toLowerCase();
-  if (lower === "low" || lower === "medium" || lower === "high" || lower === "critical") {
+  if (
+    lower === "low" ||
+    lower === "medium" ||
+    lower === "high" ||
+    lower === "critical"
+  ) {
     return lower;
   }
 
@@ -268,13 +276,15 @@ export async function analyzeImageViaN8N(input: N8NImageInput) {
         ? detectedIssues
         : fallbackDetectedIssues.length > 0
           ? fallbackDetectedIssues
-        : ["Review image findings manually for final confirmation."],
+          : ["Review image findings manually for final confirmation."],
     recommendations:
       recommendations.length > 0
         ? recommendations
         : fallbackRecommendations.length > 0
           ? fallbackRecommendations
-        : ["Verify this finding with field inspection or additional imagery."],
+          : [
+              "Verify this finding with field inspection or additional imagery.",
+            ],
     raw: payload,
   };
 }

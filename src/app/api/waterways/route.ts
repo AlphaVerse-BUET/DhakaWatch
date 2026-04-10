@@ -42,11 +42,18 @@ export async function GET(request: NextRequest) {
 
   const bbox =
     parsedBBox?.bbox ??
-    bboxFromLatLngRadius(pointRadius!.lat, pointRadius!.lng, pointRadius!.radiusKm);
+    bboxFromLatLngRadius(
+      pointRadius!.lat,
+      pointRadius!.lng,
+      pointRadius!.radiusKm,
+    );
   const { south, west, north, east } = bbox;
 
   if (north <= south || east <= west) {
-    return NextResponse.json({ detail: "Invalid bounding box" }, { status: 400 });
+    return NextResponse.json(
+      { detail: "Invalid bounding box" },
+      { status: 400 },
+    );
   }
 
   const waterways = await fetchWaterways(south, west, north, east);

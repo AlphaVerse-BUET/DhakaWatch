@@ -1,0 +1,165 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "ward_id": "ward_old_dhaka",
+        "ward_name": "Old Dhaka",
+        "zone": "DSCC"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [90.385, 23.700],
+            [90.435, 23.700],
+            [90.435, 23.735],
+            [90.385, 23.735],
+            [90.385, 23.700]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "ward_id": "ward_purbachal",
+        "ward_name": "Purbachal",
+        "zone": "DNCC"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [90.470, 23.820],
+            [90.550, 23.820],
+            [90.550, 23.870],
+            [90.470, 23.870],
+            [90.470, 23.820]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "ward_id": "ward_uttara",
+        "ward_name": "Uttara",
+        "zone": "DNCC"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [90.360, 23.860],
+            [90.420, 23.860],
+            [90.420, 23.905],
+            [90.360, 23.905],
+            [90.360, 23.860]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "ward_id": "ward_mirpur",
+        "ward_name": "Mirpur",
+        "zone": "DNCC"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [90.340, 23.790],
+            [90.390, 23.790],
+            [90.390, 23.845],
+            [90.340, 23.845],
+            [90.340, 23.790]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "ward_id": "ward_farmgate",
+        "ward_name": "Farmgate",
+        "zone": "DNCC"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [90.375, 23.740],
+            [90.410, 23.740],
+            [90.410, 23.775],
+            [90.375, 23.775],
+            [90.375, 23.740]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "ward_id": "ward_bashundhara",
+        "ward_name": "Bashundhara",
+        "zone": "DNCC"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [90.430, 23.805],
+            [90.470, 23.805],
+            [90.470, 23.840],
+            [90.430, 23.840],
+            [90.430, 23.805]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "ward_id": "ward_dhanmondi",
+        "ward_name": "Dhanmondi",
+        "zone": "DSCC"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [90.355, 23.735],
+            [90.390, 23.735],
+            [90.390, 23.760],
+            [90.355, 23.760],
+            [90.355, 23.735]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "ward_id": "ward_jatrabari",
+        "ward_name": "Jatrabari",
+        "zone": "DSCC"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [90.445, 23.705],
+            [90.480, 23.705],
+            [90.480, 23.740],
+            [90.445, 23.740],
+            [90.445, 23.705]
+          ]
+        ]
+      }
+    }
+  ]
+}

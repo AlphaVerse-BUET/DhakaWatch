@@ -1,0 +1,1429 @@
+{
+  "hotspots": [
+    {
+      "id": "HP001",
+      "lat": 23.709446,
+      "lng": 90.365473,
+      "severity": "moderate",
+      "type": "mixed",
+      "label": "Mixed Industrial",
+      "river": "Buriganga River",
+      "river_id": "buriganga",
+      "spectral": {
+        "ndti": 0.297,
+        "cdom": 0.99,
+        "red_blue_ratio": 0.95
+      },
+      "nearby_factories": 99,
+      "top_source": "Alauddin Saw Mill",
+      "description": "Moderate pollution detected via spectral analysis. 99 industrial facilities within 1.5km. Dominant signature: mixed industrial.",
+      "attributed_factories": [
+        {
+          "factory_name": "Alauddin Saw Mill",
+          "osm_id": 3314061862,
+          "industry_type": "unknown",
+          "pollution_profile": "Unclassified Industrial",
+          "distance_m": 60,
+          "lat": 23.709985,
+          "lng": 90.365487,
+          "spectral_match": 0.5,
+          "distance_score": 2.782,
+          "probability": 0.223
+        },
+        {
+          "factory_name": "Taj Metal",
+          "osm_id": 3314061868,
+          "industry_type": "unknown",
+          "pollution_profile": "Unclassified Industrial",
+          "distance_m": 80,
+          "lat": 23.710038,
+          "lng": 90.365916,
+          "spectral_match": 0.5,
+          "distance_score": 1.571,
+          "probability": 0.1259
+        },
+        {
+          "factory_name": "Salam Poly Factory",
+          "osm_id": 3314061866,
+          "industry_type": "unknown",
+          "pollution_profile": "Unclassified Industrial",
+          "distance_m": 91,
+          "lat": 23.710263,
+          "lng": 90.365515,
+          "spectral_match": 0.5,
+          "distance_score": 1.209,
+          "probability": 0.0969
+        },
+        {
+          "factory_name": "Mariya Plastic",
+          "osm_id": 3314120586,
+          "industry_type": "unknown",
+          "pollution_profile": "Unclassified Industrial",
+          "distance_m": 115,
+          "lat": 23.710465,
+          "lng": 90.365648,
+          "spectral_match": 0.5,
+          "distance_score": 0.76,
+          "probability": 0.0609
+        },
+        {
+          "factory_name": "New Plasticon Factory",
+          "osm_id": 3314120587,
+          "industry_type": "unknown",
+          "pollution_profile": "Unclassified Industrial",
+          "distance_m": 125,
+          "lat": 23.710437,
+          "lng": 90.364899,
+          "spectral_match": 0.5,
+          "distance_score": 0.643,
+          "probability": 0.0515
+        }
+      ]
+    },
+    {
+      "id": "HP002",
+      "lat": 23.707844,
+      "lng": 90.36906,
+      "severity": "moderate",
+      "type": "mixed",
+      "label": "Mixed Industrial",
+      "river": "Buriganga River",
+      "river_id": "buriganga",
+      "spectral": {
+        "ndti": 0.302,
+        "cdom": 1.68,
+        "red_blue_ratio": 0.84
+      },
+      "nearby_factories": 136,
+      "top_source": "Alauddin Saw Mill",
+      "description": "Moderate pollution detected via spectral analysis. 136 industrial facilities within 1.5km. Dominant signature: mixed industrial.",
+      "attributed_factories": [
+        {
+          "factory_name": "Insaf Food Agribased Indudtries",
+          "osm_id": 4561753143,
+          "industry_type": "food",
+          "pollution_profile": "Organic Waste",
+          "distance_m": 161,
+          "lat": 23.709266,
+          "lng": 90.368777,
+          "spectral_match": 0.533,
+          "distance_score": 0.387,
+          "probability": 0.1405
+        },
+        {
+          "factory_name": "Insaf Foods & Agrobased Industries",
+          "osm_id": 3478504001,
+          "industry_type": "food",
+          "pollution_profile": "Organic Waste",
+          "distance_m": 305,
+          "lat": 23.709596,
+          "lng": 90.366753,
+          "spectral_match": 0.533,
+          "distance_score": 0.107,
+          "probability": 0.039
+        },
+        {
+          "factory_name": "\u0987\u09b8\u09cd\u09aa\u09be\u09a4 \u0995\u09be\u09b0\u0996\u09be\u09a8\u09be",
+          "osm_id": 3473792186,
+          "industry_type": "unknown",
+          "pollution_profile": "Unclassified Industrial",
+          "distance_m": 392,
+          "lat": 23.708498,
+          "lng": 90.372845,
+          "spectral_match": 0.5,
+          "distance_score": 0.065,
+          "probability": 0.0221
+        },
+        {
+          "factory_name": "Taj Metal",
+          "osm_id": 3314061868,
+          "industry_type": "unknown",
+          "pollution_profile": "Unclassified Industrial",
+          "distance_m": 402,
+          "lat": 23.710038,
+          "lng": 90.365916,
+          "spectral_match": 0.5,
+          "distance_score": 0.062,
+          "probability": 0.021
+        },
+        {
+          "factory_name": "Alauddin Saw Mill",
+          "osm_id": 3314061862,
+          "industry_type": "unknown",
+          "pollution_profile": "Unclassified Industrial",
+          "distance_m": 435,
+          "lat": 23.709985,
+          "lng": 90.365487,
+          "spectral_match": 0.5,
+          "distance_score": 0.053,
+          "probability": 0.018
+        }
+      ]
+    },
+    {
+      "id": "HP003",
+      "lat": 23.704398,
+      "lng": 90.3763,
+      "severity": "moderate",
+      "type": "mixed",
+      "label": "Mixed Industrial",
+      "river": "Buriganga River",
+      "river_id": "buriganga",
+      "spectral": {
+        "ndti": 0.233,
+        "cdom": 1.36,
+        "red_blue_ratio": 0.81
+      },
+      "nearby_factories": 121,
+      "top_source": "Alauddin Saw Mill",
+      "description": "Moderate pollution detected via spectral analysis. 121 industrial facilities within 1.5km. Dominant signature: mixed industrial.",
+      "attributed_factories": [
+        {
+          "factory_name": "Basir Plastic Factory",
+          "osm_id": 3529135317,
+          "industry_type": "unknown",
+          "pollution_profile": "Unclassified Industrial",
+          "distance_m": 503,
+          "lat": 23.70867,
+          "lng": 90.377938,
+          "spectral_match": 0.5,
+          "distance_score": 0.039,
+          "probability": 0.0307
+        },
+        {
+          "factory_name": "D M Plastic Factory",
+          "osm_id": 3529135319,
+          "industry_type": "unknown",
+          "pollution_profile": "Unclassified Industrial",
+          "distance_m": 524,
+          "lat": 23.708637,
+          "lng": 90.378558,
+          "spectral_match": 0.5,
+          "distance_score": 0.036,
+          "probability": 0.0283
+        },
+        {
+          "factory_name": "Abdur Rashid Factory",
+          "osm_id": 3473792178,
+          "industry_type": "unknown",
+          "pollution_profile": "Unclassified Industrial",
+          "distance_m": 530,
+          "lat": 23.708449,
+          "lng": 90.373549,
+          "spectral_match": 0.5,
+          "distance_score": 0.036,
+          "probability": 0.0277
+        },
+        {
+          "factory_name": "\u09ae\u09df\u09a6\u09be\u09b0 \u09ae\u09bf\u09b2",
+          "osm_id": 4556873039,
+          "industry_type": "unknown",
+          "pollution_profile": "Unclassified Industrial",
+          "distance_m": 562,
+          "lat": 23.708642,
+          "lng": 90.373304,
+          "spectral_match": 0.5,
+          "distance_score": 0.032,
+          "probability": 0.0247
+        },
+        {
+          "factory_name": "Rahmat Metal Glass Bengals Factory",
+          "osm_id": 3473817095,
+          "industry_type": "unknown",
+          "pollution_profile": "Unclassified Industrial",
+          "distance_m": 567,
+          "lat": 23.709273,
+          "lng": 90.374675,
+          "spectral_match": 0.5,
+          "distance_score": 0.031,
+          "probability": 0.0242
+        }
+      ]
+    },
+    {
+      "id": "HP004",
+      "lat": 23.702619,
+      "lng": 90.381013,
+      "severity": "moderate",
+      "type": "mixed",
+      "label": "Mixed Industrial",
+      "river": "Buriganga River",
+      "river_id": "buriganga",
+      "spectral": {
+        "ndti": 0.282,
+        "cdom": 1.13,
+        "red_blue_ratio": 1.15
+      },
+      "nearby_factories": 53,
+      "top_source": "\u0987\u09b8\u09cd\u09aa\u09be\u09a4 \u0995\u09be\u09b0\u0996\u09be\u09a8\u09be",
+      "description": "Moderate pollution detected via spectral analysis. 53 industrial facilities within 1.5km. Dominant signature: mixed industrial.",
+      "attributed_factories": [
+        {
+          "factory_name": "Hazi Ali Azgor Factory",
+          "osm_id": 3529135323,
+          "industry_type": "unknown",
+          "pollution_profile": "Unclassified Industrial",
+          "distance_m": 668,
+          "lat": 23.70859,
+          "lng": 90.380295,
+          "spectral_match": 0.5,
+          "distance_score": 0.022,
+          "probability": 0.0263
+        },
+        {
+          "factory_name": "H S Enterprise",
+          "osm_id": 3529135322,
+          "industry_type": "unknown",
+          "pollution_profile": "Unclassified Industrial",
+          "distance_m": 694,
+          "lat": 23.708842,
+          "lng": 90.38157,
+          "spectral_match": 0.5,
+          "distance_score": 0.021,
+          "probability": 0.0243
+        },
+        {
+          "factory_name": "Lotif Hazi Factory",
+          "osm_id": 3529135326,
+          "industry_type": "unknown",
+          "pollution_profile": "Unclassified Industrial",
+          "distance_m": 696,
+          "lat": 23.708829,
+          "lng": 90.380165,
+          "spectral_match": 0.5,
+          "distance_score": 0.021,
+          "probability": 0.0242
+        },
+        {
+          "factory_name": "Silver Factory",
+          "osm_id": 3529135333,
+          "industry_type": "unknown",
+          "pollution_profile": "Unclassified Industrial",
+          "distance_m": 707,
+          "lat": 23.708837,
+          "lng": 90.379584,
+          "spectral_match": 0.5,
+          "distance_score": 0.02,
+          "probability": 0.0235
+        },
+        {
+          "factory_name": "D M Plastic Factory",
+          "osm_id": 3529135319,
+          "industry_type": "unknown",
+          "pollution_profile": "Unclassified Industrial",
+          "distance_m": 714,
+          "lat": 23.708637,
+          "lng": 90.378558,
+          "spectral_match": 0.5,
+          "distance_score": 0.02,
+          "probability": 0.023
+        }
+      ]
+    },
+    {
+      "id": "HP005",
+      "lat": 23.698311,
+      "lng": 90.388914,
+      "severity": "moderate",
+      "type": "mixed",
+      "label": "Mixed Industrial",
+      "river": "Buriganga River",
+      "river_id": "buriganga",
+      "spectral": {
+        "ndti": 0.321,
+        "cdom": 1.51,
+        "red_blue_ratio": 1.0
+      },
+      "nearby_factories": 32,
+      "top_source": "Ecotone Electronics, Appliance store, Chunkutia Road, South Keraniganj, Dhaka",
+      "description": "Moderate pollution detected via spectral analysis. 32 industrial facilities within 1.5km. Dominant signature: mixed industrial.",
+      "attributed_factories": [
+        {
+          "factory_name": "Ecotone Electronics, Appliance store, Chunkutia Road, South Keraniganj, Dhaka",
+          "osm_id": 11699589341,
+          "industry_type": "unknown",
+          "pollution_profile": "Unclassified Industrial",
+          "distance_m": 1178,
+          "lat": 23.695495,
+          "lng": 90.400065,
+          "spectral_match": 0.5,
+          "distance_score": 0.007,
+          "probability": 0.0339
+        },
+        {
+          "factory_name": "Shapla Plastic Factory",
+          "osm_id": 3395878280,
+          "industry_type": "unknown",
+          "pollution_profile": "Unclassified Industrial",
+          "distance_m": 1282,
+          "lat": 23.709383,
+          "lng": 90.385395,
+          "spectral_match": 0.5,
+          "distance_score": 0.006,
+          "probability": 0.0286
+        },
+        {
+          "factory_name": "Shoe Factory",
+          "osm_id": 3395891137,
+          "industry_type": "unknown",
+          "pollution_profile": "Unclassified Industrial",
+          "distance_m": 1289,
+          "lat": 23.709295,
+          "lng": 90.384878,
+          "spectral_match": 0.5,
+          "distance_score": 0.006,
+          "probability": 0.0283
+        },
+        {
+          "factory_name": "A B Best Polymer Pipe Factory",
+          "osm_id": 3528954738,
+          "industry_type": "unknown",
+          "pollution_profile": "Unclassified Industrial",
+          "distance_m": 1308,
+          "lat": 23.71007,
+          "lng": 90.388439,
+          "spectral_match": 0.5,
+          "distance_score": 0.006,
+          "probability": 0.0274
+        },
+        {
+          "factory_name": "Mr. RL Engineering Workshop, Auto repair shop, Keraniganj",
+          "osm_id": 11671559529,
+          "industry_type": "unknown",
+          "pollution_profile": "Unclassified Industrial",
+          "distance_m": 1311,
+          "lat": 23.692433,
+          "lng": 90.40007,
+          "spectral_match": 0.5,
+          "distance_score": 0.006,
+          "probability": 0.0273
+        }
+      ]
+    },
+    {
+      "id": "HP006",
+      "lat": 23.696695,
+      "lng": 90.395207,
+      "severity": "moderate",
+      "type": "mixed",
+      "label": "Mixed Industrial",
+      "river": "Buriganga River",
+      "river_id": "buriganga",
+      "spectral": {
+        "ndti": 0.25,
+        "cdom": 1.02,
+        "red_blue_ratio": 0.86
+      },
+      "nearby_factories": 3,
+      "top_source": "Ecotone Electronics, Appliance store, Chunkutia Road, South Keraniganj, Dhaka",
+      "description": "Moderate pollution detected via spectral analysis. 3 industrial facilities within 1.5km. Dominant signature: mixed industrial.",
+      "attributed_factories": [
+        {
+          "factory_name": "Ecotone Electronics, Appliance store, Chunkutia Road, South Keraniganj, Dhaka",
+          "osm_id": 11699589341,
+          "industry_type": "unknown",
+          "pollution_profile": "Unclassified Industrial",
+          "distance_m": 512,
+          "lat": 23.695495,
+          "lng": 90.400065,
+          "spectral_match": 0.5,
+          "distance_score": 0.038,
+          "probability": 0.328
+        },
+        {
+          "factory_name": "Mr. RL Engineering Workshop, Auto repair shop, Keraniganj",
+          "osm_id": 11671559529,
+          "industry_type": "unknown",
+          "pollution_profile": "Unclassified Industrial",
+          "distance_m": 685,
+          "lat": 23.692433,
+          "lng": 90.40007,
+          "spectral_match": 0.5,
+          "distance_score": 0.021,
+          "probability": 0.1833
+        },
+        {
+          "factory_name": "Bhai Bhai Iron & Still workshop, Near Army Camp, Chairman Bari Rd, Dhaka",
+          "osm_id": 11671558819,
+          "industry_type": "unknown",
+          "pollution_profile": "Unclassified Industrial",
+          "distance_m": 1025,
+          "lat": 23.68927,
+          "lng": 90.401166,
+          "spectral_match": 0.5,
+          "distance_score": 0.01,
+          "probability": 0.082
+        },
+        {
+          "factory_name": "A B Best Polymer Pipe Factory",
+          "osm_id": 3528954738,
+          "industry_type": "unknown",
+          "pollution_profile": "Unclassified Industrial",
+          "distance_m": 1639,
+          "lat": 23.71007,
+          "lng": 90.388439,
+          "spectral_match": 0.5,
+          "distance_score": 0.004,
+          "probability": 0.032
+        },
+        {
+          "factory_name": "Yasin Metal Factory",
+          "osm_id": 3395751316,
+          "industry_type": "unknown",
+          "pollution_profile": "Unclassified Industrial",
+          "distance_m": 1665,
+          "lat": 23.710683,
+          "lng": 90.389379,
+          "spectral_match": 0.5,
+          "distance_score": 0.004,
+          "probability": 0.0311
+        }
+      ]
+    },
+    {
+      "id": "HP007",
+      "lat": 23.694946,
+      "lng": 90.401757,
+      "severity": "high",
+      "type": "mixed",
+      "label": "Mixed Industrial",
+      "river": "Buriganga River",
+      "river_id": "buriganga",
+      "spectral": {
+        "ndti": 0.321,
+        "cdom": 1.53,
+        "red_blue_ratio": 1.12
+      },
+      "nearby_factories": 3,
+      "top_source": "Ecotone Electronics, Appliance store, Chunkutia Road, South Keraniganj, Dhaka",
+      "description": "High pollution detected via spectral analysis. 3 industrial facilities within 1.5km. Dominant signature: mixed industrial.",
+      "attributed_factories": [
+        {
+          "factory_name": "Ecotone Electronics, Appliance store, Chunkutia Road, South Keraniganj, Dhaka",
+          "osm_id": 11699589341,
+          "industry_type": "unknown",
+          "pollution_profile": "Unclassified Industrial",
+          "distance_m": 183,
+          "lat": 23.695495,
+          "lng": 90.400065,
+          "spectral_match": 0.5,
+          "distance_score": 0.299,
+          "probability": 0.6721
+        },
+        {
+          "factory_name": "Mr. RL Engineering Workshop, Auto repair shop, Keraniganj",
+          "osm_id": 11671559529,
+          "industry_type": "unknown",
+          "pollution_profile": "Unclassified Industrial",
+          "distance_m": 328,
+          "lat": 23.692433,
+          "lng": 90.40007,
+          "spectral_match": 0.5,
+          "distance_score": 0.093,
+          "probability": 0.2087
+        },
+        {
+          "factory_name": "Bhai Bhai Iron & Still workshop, Near Army Camp, Chairman Bari Rd, Dhaka",
+          "osm_id": 11671558819,
+          "industry_type": "unknown",
+          "pollution_profile": "Unclassified Industrial",
+          "distance_m": 634,
+          "lat": 23.68927,
+          "lng": 90.401166,
+          "spectral_match": 0.5,
+          "distance_score": 0.025,
+          "probability": 0.0559
+        },
+        {
+          "factory_name": "Jhilmil Substation, Electrical substation, Epuria, Dhaka",
+          "osm_id": 11662157470,
+          "industry_type": "unknown",
+          "pollution_profile": "Unclassified Industrial",
+          "distance_m": 1643,
+          "lat": 23.680206,
+          "lng": 90.400614,
+          "spectral_match": 0.5,
+          "distance_score": 0.004,
+          "probability": 0.0083
+        },
+        {
+          "factory_name": "Industrial Site #495463450",
+          "osm_id": 495463450,
+          "industry_type": "unknown",
+          "pollution_profile": "Unclassified Industrial",
+          "distance_m": 1808,
+          "lat": 23.69107,
+          "lng": 90.419002,
+          "spectral_match": 0.5,
+          "distance_score": 0.003,
+          "probability": 0.0069
+        }
+      ]
+    },
+    {
+      "id": "HP008",
+      "lat": 23.692723,
+      "lng": 90.410155,
+      "severity": "high",
+      "type": "mixed",
+      "label": "Mixed Industrial",
+      "river": "Buriganga River",
+      "river_id": "buriganga",
+      "spectral": {
+        "ndti": 0.29,
+        "cdom": 1.65,
+        "red_blue_ratio": 1.14
+      },
+      "nearby_factories": 14,
+      "top_source": "Industrial Site #495463450",
+      "description": "High pollution detected via spectral analysis. 14 industrial facilities within 1.5km. Dominant signature: mixed industrial.",
+      "attributed_factories": [
+        {
+          "factory_name": "Industrial Site #495463450",
+          "osm_id": 495463450,
+          "industry_type": "unknown",
+          "pollution_profile": "Unclassified Industrial",
+          "distance_m": 919,
+          "lat": 23.69107,
+          "lng": 90.419002,
+          "spectral_match": 0.5,
+          "distance_score": 0.012,
+          "probability": 0.0418
+        },
+        {
+          "factory_name": "Bhai Bhai Iron & Still workshop, Near Army Camp, Chairman Bari Rd, Dhaka",
+          "osm_id": 11671558819,
+          "industry_type": "unknown",
+          "pollution_profile": "Unclassified Industrial",
+          "distance_m": 993,
+          "lat": 23.68927,
+          "lng": 90.401166,
+          "spectral_match": 0.5,
+          "distance_score": 0.01,
+          "probability": 0.0358
+        },
+        {
+          "factory_name": "Mr. RL Engineering Workshop, Auto repair shop, Keraniganj",
+          "osm_id": 11671559529,
+          "industry_type": "unknown",
+          "pollution_profile": "Unclassified Industrial",
+          "distance_m": 1027,
+          "lat": 23.692433,
+          "lng": 90.40007,
+          "spectral_match": 0.5,
+          "distance_score": 0.009,
+          "probability": 0.0334
+        },
+        {
+          "factory_name": "Ecotone Electronics, Appliance store, Chunkutia Road, South Keraniganj, Dhaka",
+          "osm_id": 11699589341,
+          "industry_type": "unknown",
+          "pollution_profile": "Unclassified Industrial",
+          "distance_m": 1073,
+          "lat": 23.695495,
+          "lng": 90.400065,
+          "spectral_match": 0.5,
+          "distance_score": 0.009,
+          "probability": 0.0307
+        },
+        {
+          "factory_name": "Industrial Site #323703001",
+          "osm_id": 323703001,
+          "industry_type": "unknown",
+          "pollution_profile": "Unclassified Industrial",
+          "distance_m": 1190,
+          "lat": 23.698224,
+          "lng": 90.420183,
+          "spectral_match": 0.5,
+          "distance_score": 0.007,
+          "probability": 0.0249
+        }
+      ]
+    },
+    {
+      "id": "HP009",
+      "lat": 23.689579,
+      "lng": 90.41716,
+      "severity": "moderate",
+      "type": "mixed",
+      "label": "Mixed Industrial",
+      "river": "Buriganga River",
+      "river_id": "buriganga",
+      "spectral": {
+        "ndti": 0.312,
+        "cdom": 1.03,
+        "red_blue_ratio": 0.9
+      },
+      "nearby_factories": 54,
+      "top_source": "Industrial Site #495463450",
+      "description": "Moderate pollution detected via spectral analysis. 54 industrial facilities within 1.5km. Dominant signature: mixed industrial.",
+      "attributed_factories": [
+        {
+          "factory_name": "Industrial Site #495463450",
+          "osm_id": 495463450,
+          "industry_type": "unknown",
+          "pollution_profile": "Unclassified Industrial",
+          "distance_m": 250,
+          "lat": 23.69107,
+          "lng": 90.419002,
+          "spectral_match": 0.5,
+          "distance_score": 0.16,
+          "probability": 0.2352
+        },
+        {
+          "factory_name": "Dhaka Jute Mill",
+          "osm_id": 761387587,
+          "industry_type": "paper",
+          "pollution_profile": "Pulp & Organic",
+          "distance_m": 577,
+          "lat": 23.687226,
+          "lng": 90.42221,
+          "spectral_match": 0.567,
+          "distance_score": 0.03,
+          "probability": 0.0502
+        },
+        {
+          "factory_name": "Industrial Site #495463456",
+          "osm_id": 495463456,
+          "industry_type": "unknown",
+          "pollution_profile": "Unclassified Industrial",
+          "distance_m": 699,
+          "lat": 23.68667,
+          "lng": 90.423247,
+          "spectral_match": 0.5,
+          "distance_score": 0.02,
+          "probability": 0.0301
+        },
+        {
+          "factory_name": "Dhaka Jute Mill, Jute mill",
+          "osm_id": 12440868801,
+          "industry_type": "paper",
+          "pollution_profile": "Pulp & Organic",
+          "distance_m": 841,
+          "lat": 23.685717,
+          "lng": 90.424263,
+          "spectral_match": 0.567,
+          "distance_score": 0.014,
+          "probability": 0.0236
+        },
+        {
+          "factory_name": "\u09a8\u09bf\u0989 \u09a2\u09be\u0995\u09be \u0995\u099f\u09a8 \u09ae\u09bf\u09b2",
+          "osm_id": 439887086,
+          "industry_type": "unknown",
+          "pollution_profile": "Unclassified Industrial",
+          "distance_m": 980,
+          "lat": 23.692537,
+          "lng": 90.42623,
+          "spectral_match": 0.5,
+          "distance_score": 0.01,
+          "probability": 0.0153
+        }
+      ]
+    },
+    {
+      "id": "HP010",
+      "lat": 23.890271,
+      "lng": 90.33973,
+      "severity": "moderate",
+      "type": "mixed",
+      "label": "Mixed Industrial",
+      "river": "Turag River",
+      "river_id": "turag",
+      "spectral": {
+        "ndti": 0.238,
+        "cdom": 1.0,
+        "red_blue_ratio": 1.01
+      },
+      "nearby_factories": 19,
+      "top_source": "Industrial Site #593261014",
+      "description": "Moderate pollution detected via spectral analysis. 19 industrial facilities within 1.5km. Dominant signature: mixed industrial.",
+      "attributed_factories": [
+        {
+          "factory_name": "Industrial Site #593250937",
+          "osm_id": 593250937,
+          "industry_type": "unknown",
+          "pollution_profile": "Unclassified Industrial",
+          "distance_m": 118,
+          "lat": 23.890431,
+          "lng": 90.340873,
+          "spectral_match": 0.5,
+          "distance_score": 0.724,
+          "probability": 0.4778
+        },
+        {
+          "factory_name": "Industrial Site #593250942",
+          "osm_id": 593250942,
+          "industry_type": "unknown",
+          "pollution_profile": "Unclassified Industrial",
+          "distance_m": 199,
+          "lat": 23.89176,
+          "lng": 90.340814,
+          "spectral_match": 0.5,
+          "distance_score": 0.253,
+          "probability": 0.1669
+        },
+        {
+          "factory_name": "Industrial Site #593240028",
+          "osm_id": 593240028,
+          "industry_type": "unknown",
+          "pollution_profile": "Unclassified Industrial",
+          "distance_m": 242,
+          "lat": 23.888896,
+          "lng": 90.341579,
+          "spectral_match": 0.5,
+          "distance_score": 0.17,
+          "probability": 0.1125
+        },
+        {
+          "factory_name": "Industrial Site #593250935",
+          "osm_id": 593250935,
+          "industry_type": "unknown",
+          "pollution_profile": "Unclassified Industrial",
+          "distance_m": 289,
+          "lat": 23.887826,
+          "lng": 90.340681,
+          "spectral_match": 0.5,
+          "distance_score": 0.12,
+          "probability": 0.0793
+        },
+        {
+          "factory_name": "Industrial Site #593250934",
+          "osm_id": 593250934,
+          "industry_type": "unknown",
+          "pollution_profile": "Unclassified Industrial",
+          "distance_m": 399,
+          "lat": 23.886928,
+          "lng": 90.341162,
+          "spectral_match": 0.5,
+          "distance_score": 0.063,
+          "probability": 0.0414
+        }
+      ]
+    },
+    {
+      "id": "HP011",
+      "lat": 23.880873,
+      "lng": 90.345296,
+      "severity": "moderate",
+      "type": "mixed",
+      "label": "Mixed Industrial",
+      "river": "Turag River",
+      "river_id": "turag",
+      "spectral": {
+        "ndti": 0.256,
+        "cdom": 1.12,
+        "red_blue_ratio": 0.96
+      },
+      "nearby_factories": 14,
+      "top_source": "Industrial Site #605775504",
+      "description": "Moderate pollution detected via spectral analysis. 14 industrial facilities within 1.5km. Dominant signature: mixed industrial.",
+      "attributed_factories": [
+        {
+          "factory_name": "Industrial Site #593261014",
+          "osm_id": 593261014,
+          "industry_type": "unknown",
+          "pollution_profile": "Unclassified Industrial",
+          "distance_m": 83,
+          "lat": 23.88076,
+          "lng": 90.344485,
+          "spectral_match": 0.5,
+          "distance_score": 1.437,
+          "probability": 0.9113
+        },
+        {
+          "factory_name": "Industrial Site #593328723",
+          "osm_id": 593328723,
+          "industry_type": "unknown",
+          "pollution_profile": "Unclassified Industrial",
+          "distance_m": 746,
+          "lat": 23.882401,
+          "lng": 90.338151,
+          "spectral_match": 0.5,
+          "distance_score": 0.018,
+          "probability": 0.0114
+        },
+        {
+          "factory_name": "Industrial Site #593250934",
+          "osm_id": 593250934,
+          "industry_type": "unknown",
+          "pollution_profile": "Unclassified Industrial",
+          "distance_m": 794,
+          "lat": 23.886928,
+          "lng": 90.341162,
+          "spectral_match": 0.5,
+          "distance_score": 0.016,
+          "probability": 0.0101
+        },
+        {
+          "factory_name": "Industrial Site #593250935",
+          "osm_id": 593250935,
+          "industry_type": "unknown",
+          "pollution_profile": "Unclassified Industrial",
+          "distance_m": 904,
+          "lat": 23.887826,
+          "lng": 90.340681,
+          "spectral_match": 0.5,
+          "distance_score": 0.012,
+          "probability": 0.0078
+        },
+        {
+          "factory_name": "Industrial Site #593240028",
+          "osm_id": 593240028,
+          "industry_type": "unknown",
+          "pollution_profile": "Unclassified Industrial",
+          "distance_m": 969,
+          "lat": 23.888896,
+          "lng": 90.341579,
+          "spectral_match": 0.5,
+          "distance_score": 0.011,
+          "probability": 0.0068
+        }
+      ]
+    },
+    {
+      "id": "HP012",
+      "lat": 23.869327,
+      "lng": 90.349759,
+      "severity": "moderate",
+      "type": "mixed",
+      "label": "Mixed Industrial",
+      "river": "Turag River",
+      "river_id": "turag",
+      "spectral": {
+        "ndti": 0.291,
+        "cdom": 1.09,
+        "red_blue_ratio": 1.24
+      },
+      "nearby_factories": 10,
+      "top_source": "Industrial Site #605775504",
+      "description": "Moderate pollution detected via spectral analysis. 10 industrial facilities within 1.5km. Dominant signature: mixed industrial.",
+      "attributed_factories": [
+        {
+          "factory_name": "Industrial Site #605775504",
+          "osm_id": 605775504,
+          "industry_type": "unknown",
+          "pollution_profile": "Unclassified Industrial",
+          "distance_m": 83,
+          "lat": 23.870051,
+          "lng": 90.349556,
+          "spectral_match": 0.5,
+          "distance_score": 1.448,
+          "probability": 0.7206
+        },
+        {
+          "factory_name": "Industrial Site #593598002",
+          "osm_id": 593598002,
+          "industry_type": "unknown",
+          "pollution_profile": "Unclassified Industrial",
+          "distance_m": 218,
+          "lat": 23.869943,
+          "lng": 90.351792,
+          "spectral_match": 0.5,
+          "distance_score": 0.211,
+          "probability": 0.1049
+        },
+        {
+          "factory_name": "Industrial Site #605774928",
+          "osm_id": 605774928,
+          "industry_type": "unknown",
+          "pollution_profile": "Unclassified Industrial",
+          "distance_m": 261,
+          "lat": 23.86701,
+          "lng": 90.349371,
+          "spectral_match": 0.5,
+          "distance_score": 0.147,
+          "probability": 0.0733
+        },
+        {
+          "factory_name": "Spectra Central Workshop, Manufacturer",
+          "osm_id": 13245677255,
+          "industry_type": "unknown",
+          "pollution_profile": "Unclassified Industrial",
+          "distance_m": 319,
+          "lat": 23.871616,
+          "lng": 90.351654,
+          "spectral_match": 0.5,
+          "distance_score": 0.098,
+          "probability": 0.0488
+        },
+        {
+          "factory_name": "Industrial Site #605775505",
+          "osm_id": 605775505,
+          "industry_type": "unknown",
+          "pollution_profile": "Unclassified Industrial",
+          "distance_m": 406,
+          "lat": 23.872924,
+          "lng": 90.349075,
+          "spectral_match": 0.5,
+          "distance_score": 0.061,
+          "probability": 0.0302
+        }
+      ]
+    },
+    {
+      "id": "HP013",
+      "lat": 23.860369,
+      "lng": 90.353686,
+      "severity": "high",
+      "type": "mixed",
+      "label": "Mixed Industrial",
+      "river": "Turag River",
+      "river_id": "turag",
+      "spectral": {
+        "ndti": 0.348,
+        "cdom": 1.46,
+        "red_blue_ratio": 1.13
+      },
+      "nearby_factories": 6,
+      "top_source": "Industrial Site #605775504",
+      "description": "High pollution detected via spectral analysis. 6 industrial facilities within 1.5km. Dominant signature: mixed industrial.",
+      "attributed_factories": [
+        {
+          "factory_name": "Industrial Site #605774927",
+          "osm_id": 605774927,
+          "industry_type": "unknown",
+          "pollution_profile": "Unclassified Industrial",
+          "distance_m": 529,
+          "lat": 23.86164,
+          "lng": 90.348678,
+          "spectral_match": 0.5,
+          "distance_score": 0.036,
+          "probability": 0.4383
+        },
+        {
+          "factory_name": "Industrial Site #605774928",
+          "osm_id": 605774928,
+          "industry_type": "unknown",
+          "pollution_profile": "Unclassified Industrial",
+          "distance_m": 859,
+          "lat": 23.86701,
+          "lng": 90.349371,
+          "spectral_match": 0.5,
+          "distance_score": 0.014,
+          "probability": 0.1659
+        },
+        {
+          "factory_name": "Industrial Site #593598002",
+          "osm_id": 593598002,
+          "industry_type": "unknown",
+          "pollution_profile": "Unclassified Industrial",
+          "distance_m": 1082,
+          "lat": 23.869943,
+          "lng": 90.351792,
+          "spectral_match": 0.5,
+          "distance_score": 0.009,
+          "probability": 0.1046
+        },
+        {
+          "factory_name": "Industrial Site #605775504",
+          "osm_id": 605775504,
+          "industry_type": "unknown",
+          "pollution_profile": "Unclassified Industrial",
+          "distance_m": 1156,
+          "lat": 23.870051,
+          "lng": 90.349556,
+          "spectral_match": 0.5,
+          "distance_score": 0.007,
+          "probability": 0.0917
+        },
+        {
+          "factory_name": "Spectra Central Workshop, Manufacturer",
+          "osm_id": 13245677255,
+          "industry_type": "unknown",
+          "pollution_profile": "Unclassified Industrial",
+          "distance_m": 1268,
+          "lat": 23.871616,
+          "lng": 90.351654,
+          "spectral_match": 0.5,
+          "distance_score": 0.006,
+          "probability": 0.0762
+        }
+      ]
+    },
+    {
+      "id": "HP014",
+      "lat": 23.849631,
+      "lng": 90.354535,
+      "severity": "moderate",
+      "type": "mixed",
+      "label": "Mixed Industrial",
+      "river": "Turag River",
+      "river_id": "turag",
+      "spectral": {
+        "ndti": 0.316,
+        "cdom": 1.13,
+        "red_blue_ratio": 0.82
+      },
+      "nearby_factories": 1,
+      "top_source": "Industrial Site #605774927",
+      "description": "Moderate pollution detected via spectral analysis. 1 industrial facilities within 1.5km. Dominant signature: mixed industrial.",
+      "attributed_factories": [
+        {
+          "factory_name": "Industrial Site #605774927",
+          "osm_id": 605774927,
+          "industry_type": "unknown",
+          "pollution_profile": "Unclassified Industrial",
+          "distance_m": 1462,
+          "lat": 23.86164,
+          "lng": 90.348678,
+          "spectral_match": 0.5,
+          "distance_score": 0.005,
+          "probability": 0.5764
+        },
+        {
+          "factory_name": "Landes Bangladesh Ltd., Manufacturer",
+          "osm_id": 13270089460,
+          "industry_type": "unknown",
+          "pollution_profile": "Unclassified Industrial",
+          "distance_m": 1706,
+          "lat": 23.852059,
+          "lng": 90.337975,
+          "spectral_match": 0.5,
+          "distance_score": 0.003,
+          "probability": 0.4236
+        }
+      ]
+    },
+    {
+      "id": "HP015",
+      "lat": 23.829629,
+      "lng": 90.360311,
+      "severity": "high",
+      "type": "mixed",
+      "label": "Mixed Industrial",
+      "river": "Turag River",
+      "river_id": "turag",
+      "spectral": {
+        "ndti": 0.232,
+        "cdom": 1.7,
+        "red_blue_ratio": 1.33
+      },
+      "nearby_factories": 1,
+      "top_source": "Hasan Electric",
+      "description": "High pollution detected via spectral analysis. 1 industrial facilities within 1.5km. Dominant signature: mixed industrial.",
+      "attributed_factories": [
+        {
+          "factory_name": "Hasan Electric",
+          "osm_id": 4407994617,
+          "industry_type": "unknown",
+          "pollution_profile": "Unclassified Industrial",
+          "distance_m": 795,
+          "lat": 23.823557,
+          "lng": 90.364444,
+          "spectral_match": 0.5,
+          "distance_score": 0.016,
+          "probability": 0.5225
+        },
+        {
+          "factory_name": "Raju Fitting Tailor\u2019s",
+          "osm_id": 8219384273,
+          "industry_type": "unknown",
+          "pollution_profile": "Unclassified Industrial",
+          "distance_m": 1487,
+          "lat": 23.817615,
+          "lng": 90.366732,
+          "spectral_match": 0.5,
+          "distance_score": 0.005,
+          "probability": 0.1495
+        },
+        {
+          "factory_name": "bata",
+          "osm_id": 3740059197,
+          "industry_type": "unknown",
+          "pollution_profile": "Unclassified Industrial",
+          "distance_m": 1672,
+          "lat": 23.815528,
+          "lng": 90.366029,
+          "spectral_match": 0.5,
+          "distance_score": 0.004,
+          "probability": 0.1182
+        },
+        {
+          "factory_name": "Industrial Site #992689988",
+          "osm_id": 992689988,
+          "industry_type": "unknown",
+          "pollution_profile": "Unclassified Industrial",
+          "distance_m": 1750,
+          "lat": 23.821524,
+          "lng": 90.375056,
+          "spectral_match": 0.5,
+          "distance_score": 0.003,
+          "probability": 0.1079
+        },
+        {
+          "factory_name": "Industrial Site #399491524",
+          "osm_id": 399491524,
+          "industry_type": "unknown",
+          "pollution_profile": "Unclassified Industrial",
+          "distance_m": 1800,
+          "lat": 23.813747,
+          "lng": 90.363758,
+          "spectral_match": 0.5,
+          "distance_score": 0.003,
+          "probability": 0.102
+        }
+      ]
+    },
+    {
+      "id": "HP016",
+      "lat": 23.79953,
+      "lng": 90.517493,
+      "severity": "moderate",
+      "type": "mixed",
+      "label": "Mixed Industrial",
+      "river": "Shitalakshya River",
+      "river_id": "shitalakshya",
+      "spectral": {
+        "ndti": 0.259,
+        "cdom": 1.68,
+        "red_blue_ratio": 1.08
+      },
+      "nearby_factories": 2,
+      "top_source": "Industrial Site #1082530059",
+      "description": "Moderate pollution detected via spectral analysis. 2 industrial facilities within 1.5km. Dominant signature: mixed industrial.",
+      "attributed_factories": [
+        {
+          "factory_name": "Industrial Site #1082530058",
+          "osm_id": 1082530058,
+          "industry_type": "unknown",
+          "pollution_profile": "Unclassified Industrial",
+          "distance_m": 1219,
+          "lat": 23.790726,
+          "lng": 90.524636,
+          "spectral_match": 0.5,
+          "distance_score": 0.007,
+          "probability": 0.3321
+        },
+        {
+          "factory_name": "Industrial Site #1082530059",
+          "osm_id": 1082530059,
+          "industry_type": "unknown",
+          "pollution_profile": "Unclassified Industrial",
+          "distance_m": 1339,
+          "lat": 23.788822,
+          "lng": 90.523504,
+          "spectral_match": 0.5,
+          "distance_score": 0.006,
+          "probability": 0.2755
+        },
+        {
+          "factory_name": "Industrial Site #1082530060",
+          "osm_id": 1082530060,
+          "industry_type": "unknown",
+          "pollution_profile": "Unclassified Industrial",
+          "distance_m": 1509,
+          "lat": 23.786665,
+          "lng": 90.522217,
+          "spectral_match": 0.5,
+          "distance_score": 0.004,
+          "probability": 0.2168
+        },
+        {
+          "factory_name": "Industrial Site #937031068",
+          "osm_id": 937031068,
+          "industry_type": "unknown",
+          "pollution_profile": "Unclassified Industrial",
+          "distance_m": 1677,
+          "lat": 23.784782,
+          "lng": 90.520921,
+          "spectral_match": 0.5,
+          "distance_score": 0.004,
+          "probability": 0.1756
+        }
+      ]
+    },
+    {
+      "id": "HP017",
+      "lat": 23.790796,
+      "lng": 90.519799,
+      "severity": "moderate",
+      "type": "mixed",
+      "label": "Mixed Industrial",
+      "river": "Shitalakshya River",
+      "river_id": "shitalakshya",
+      "spectral": {
+        "ndti": 0.284,
+        "cdom": 1.16,
+        "red_blue_ratio": 1.15
+      },
+      "nearby_factories": 5,
+      "top_source": "Industrial Site #1082530061",
+      "description": "Moderate pollution detected via spectral analysis. 5 industrial facilities within 1.5km. Dominant signature: mixed industrial.",
+      "attributed_factories": [
+        {
+          "factory_name": "Industrial Site #1082530059",
+          "osm_id": 1082530059,
+          "industry_type": "unknown",
+          "pollution_profile": "Unclassified Industrial",
+          "distance_m": 436,
+          "lat": 23.788822,
+          "lng": 90.523504,
+          "spectral_match": 0.5,
+          "distance_score": 0.053,
+          "probability": 0.2983
+        },
+        {
+          "factory_name": "Industrial Site #1082530058",
+          "osm_id": 1082530058,
+          "industry_type": "unknown",
+          "pollution_profile": "Unclassified Industrial",
+          "distance_m": 492,
+          "lat": 23.790726,
+          "lng": 90.524636,
+          "spectral_match": 0.5,
+          "distance_score": 0.041,
+          "probability": 0.2343
+        },
+        {
+          "factory_name": "Industrial Site #1082530060",
+          "osm_id": 1082530060,
+          "industry_type": "unknown",
+          "pollution_profile": "Unclassified Industrial",
+          "distance_m": 521,
+          "lat": 23.786665,
+          "lng": 90.522217,
+          "spectral_match": 0.5,
+          "distance_score": 0.037,
+          "probability": 0.209
+        },
+        {
+          "factory_name": "Industrial Site #937031068",
+          "osm_id": 937031068,
+          "industry_type": "unknown",
+          "pollution_profile": "Unclassified Industrial",
+          "distance_m": 678,
+          "lat": 23.784782,
+          "lng": 90.520921,
+          "spectral_match": 0.5,
+          "distance_score": 0.022,
+          "probability": 0.1233
+        },
+        {
+          "factory_name": "Industrial Site #1082530061",
+          "osm_id": 1082530061,
+          "industry_type": "unknown",
+          "pollution_profile": "Unclassified Industrial",
+          "distance_m": 1028,
+          "lat": 23.782032,
+          "lng": 90.523016,
+          "spectral_match": 0.5,
+          "distance_score": 0.009,
+          "probability": 0.0537
+        }
+      ]
+    },
+    {
+      "id": "HP018",
+      "lat": 23.779182,
+      "lng": 90.521094,
+      "severity": "moderate",
+      "type": "mixed",
+      "label": "Mixed Industrial",
+      "river": "Shitalakshya River",
+      "river_id": "shitalakshya",
+      "spectral": {
+        "ndti": 0.233,
+        "cdom": 1.75,
+        "red_blue_ratio": 1.11
+      },
+      "nearby_factories": 9,
+      "top_source": "Industrial Site #1082530061",
+      "description": "Moderate pollution detected via spectral analysis. 9 industrial facilities within 1.5km. Dominant signature: mixed industrial.",
+      "attributed_factories": [
+        {
+          "factory_name": "Industrial Site #1082530061",
+          "osm_id": 1082530061,
+          "industry_type": "unknown",
+          "pollution_profile": "Unclassified Industrial",
+          "distance_m": 372,
+          "lat": 23.782032,
+          "lng": 90.523016,
+          "spectral_match": 0.5,
+          "distance_score": 0.072,
+          "probability": 0.3722
+        },
+        {
+          "factory_name": "Industrial Site #937031068",
+          "osm_id": 937031068,
+          "industry_type": "unknown",
+          "pollution_profile": "Unclassified Industrial",
+          "distance_m": 623,
+          "lat": 23.784782,
+          "lng": 90.520921,
+          "spectral_match": 0.5,
+          "distance_score": 0.026,
+          "probability": 0.133
+        },
+        {
+          "factory_name": "Industrial Site #1082530060",
+          "osm_id": 1082530060,
+          "industry_type": "unknown",
+          "pollution_profile": "Unclassified Industrial",
+          "distance_m": 840,
+          "lat": 23.786665,
+          "lng": 90.522217,
+          "spectral_match": 0.5,
+          "distance_score": 0.014,
+          "probability": 0.0732
+        },
+        {
+          "factory_name": "Industrial Site #1082530059",
+          "osm_id": 1082530059,
+          "industry_type": "unknown",
+          "pollution_profile": "Unclassified Industrial",
+          "distance_m": 1100,
+          "lat": 23.788822,
+          "lng": 90.523504,
+          "spectral_match": 0.5,
+          "distance_score": 0.008,
+          "probability": 0.0427
+        },
+        {
+          "factory_name": "\u0986\u0995\u09bf\u099c \u09b0\u09c7\u09a1\u09bf \u09ae\u09bf\u0995\u09cd\u09b8 \u0995\u0982\u0995\u09cd\u09b0\u09bf\u099f \u09b2\u09bf\u09ae\u09bf\u099f\u09c7\u09a1",
+          "osm_id": 11533268693,
+          "industry_type": "unknown",
+          "pollution_profile": "Unclassified Industrial",
+          "distance_m": 1168,
+          "lat": 23.77532,
+          "lng": 90.510421,
+          "spectral_match": 0.5,
+          "distance_score": 0.007,
+          "probability": 0.0378
+        }
+      ]
+    },
+    {
+      "id": "HP019",
+      "lat": 23.809844,
+      "lng": 90.469127,
+      "severity": "moderate",
+      "type": "mixed",
+      "label": "Mixed Industrial",
+      "river": "Balu River",
+      "river_id": "balu",
+      "spectral": {
+        "ndti": 0.216,
+        "cdom": 1.45,
+        "red_blue_ratio": 1.28
+      },
+      "nearby_factories": 1,
+      "top_source": "Industrial Site #1085564233",
+      "description": "Moderate pollution detected via spectral analysis. 1 industrial facilities within 1.5km. Dominant signature: mixed industrial.",
+      "attributed_factories": [
+        {
+          "factory_name": "Industrial Site #1085564233",
+          "osm_id": 1085564233,
+          "industry_type": "unknown",
+          "pollution_profile": "Unclassified Industrial",
+          "distance_m": 1467,
+          "lat": 23.823032,
+          "lng": 90.469499,
+          "spectral_match": 0.5,
+          "distance_score": 0.005,
+          "probability": 1.0
+        }
+      ]
+    }
+  ],
+  "total": 19
+}

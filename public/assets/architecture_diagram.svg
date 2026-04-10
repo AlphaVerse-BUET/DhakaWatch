@@ -1,0 +1,254 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 700" font-family="Inter, system-ui, sans-serif">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#0f172a"/>
+      <stop offset="100%" stop-color="#020617"/>
+    </linearGradient>
+    <linearGradient id="teal" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#06d6a0"/>
+      <stop offset="100%" stop-color="#0ea5e9"/>
+    </linearGradient>
+    <linearGradient id="purple" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#8b5cf6"/>
+      <stop offset="100%" stop-color="#ec4899"/>
+    </linearGradient>
+    <linearGradient id="blue" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#0ea5e9"/>
+      <stop offset="100%" stop-color="#6366f1"/>
+    </linearGradient>
+    <filter id="glow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="4" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+    <filter id="shadow">
+      <feDropShadow dx="0" dy="4" stdDeviation="6" flood-color="#000" flood-opacity=".4"/>
+    </filter>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="5" markerHeight="5" orient="auto">
+      <path d="M0,0 L10,5 L0,10 Z" fill="#06d6a0"/>
+    </marker>
+    <marker id="arrowBlue" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="5" markerHeight="5" orient="auto">
+      <path d="M0,0 L10,5 L0,10 Z" fill="#0ea5e9"/>
+    </marker>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1200" height="700" fill="url(#bg)" rx="16"/>
+
+  <!-- Title -->
+  <text x="600" y="45" fill="#f8fafc" font-size="24" font-weight="700" text-anchor="middle">NodiWatch System Architecture</text>
+  <text x="600" y="70" fill="#64748b" font-size="12" text-anchor="middle">Satellite Data → Cloud Processing → Real-time Applications</text>
+
+  <!-- ═══════════════════════════════════════════════════════════════════ -->
+  <!-- TIER 1: DATA SOURCES (Left Column) -->
+  <!-- ═══════════════════════════════════════════════════════════════════ -->
+  <g transform="translate(40, 100)">
+    <rect width="300" height="510" rx="12" fill="rgba(6,214,160,.04)" stroke="rgba(6,214,160,.2)" stroke-width="2"/>
+    <text x="150" y="30" fill="#06d6a0" font-size="13" font-weight="700" text-anchor="middle" letter-spacing="1.5">DATA SOURCES</text>
+
+    <!-- Sentinel-2 -->
+    <g transform="translate(20, 50)">
+      <rect width="260" height="70" rx="8" fill="rgba(6,214,160,.08)" stroke="rgba(6,214,160,.3)" stroke-width="1" filter="url(#shadow)"/>
+      <text x="20" y="28" fill="#06d6a0" font-size="22">🛰️</text>
+      <text x="52" y="26" fill="#f1f5f9" font-size="13" font-weight="600">Sentinel-2 MSI</text>
+      <text x="20" y="44" fill="#64748b" font-size="9">COPERNICUS/S2_SR_HARMONIZED</text>
+      <text x="20" y="58" fill="#94a3b8" font-size="10">10m resolution • 5-day revisit • Optical</text>
+    </g>
+
+    <!-- Sentinel-1 -->
+    <g transform="translate(20, 130)">
+      <rect width="260" height="70" rx="8" fill="rgba(14,165,233,.08)" stroke="rgba(14,165,233,.3)" stroke-width="1" filter="url(#shadow)"/>
+      <text x="20" y="28" fill="#0ea5e9" font-size="22">📡</text>
+      <text x="52" y="26" fill="#f1f5f9" font-size="13" font-weight="600">Sentinel-1 SAR</text>
+      <text x="20" y="44" fill="#64748b" font-size="9">COPERNICUS/S1_GRD</text>
+      <text x="20" y="58" fill="#94a3b8" font-size="10">10m resolution • C-band radar • All weather</text>
+    </g>
+
+    <!-- Landsat -->
+    <g transform="translate(20, 210)">
+      <rect width="260" height="70" rx="8" fill="rgba(139,92,246,.08)" stroke="rgba(139,92,246,.3)" stroke-width="1" filter="url(#shadow)"/>
+      <text x="20" y="28" fill="#a78bfa" font-size="22">🌍</text>
+      <text x="52" y="26" fill="#f1f5f9" font-size="13" font-weight="600">Landsat 8/9</text>
+      <text x="20" y="44" fill="#64748b" font-size="9">LANDSAT/LC09/C02/T1_L2</text>
+      <text x="20" y="58" fill="#94a3b8" font-size="10">30m resolution • 40+ years archive</text>
+    </g>
+
+    <!-- JRC -->
+    <g transform="translate(20, 290)">
+      <rect width="260" height="70" rx="8" fill="rgba(250,204,21,.08)" stroke="rgba(250,204,21,.3)" stroke-width="1" filter="url(#shadow)"/>
+      <text x="20" y="28" fill="#facc15" font-size="22">💧</text>
+      <text x="52" y="26" fill="#f1f5f9" font-size="13" font-weight="600">JRC Global Surface Water</text>
+      <text x="20" y="44" fill="#64748b" font-size="9">JRC/GSW1_4/GlobalSurfaceWater</text>
+      <text x="20" y="58" fill="#94a3b8" font-size="10">1984–2021 • Historical water extent</text>
+    </g>
+
+    <!-- OSM -->
+    <g transform="translate(20, 370)">
+      <rect width="260" height="70" rx="8" fill="rgba(239,68,68,.08)" stroke="rgba(239,68,68,.3)" stroke-width="1" filter="url(#shadow)"/>
+      <text x="20" y="28" fill="#f87171" font-size="22">🗺️</text>
+      <text x="52" y="26" fill="#f1f5f9" font-size="13" font-weight="600">OpenStreetMap</text>
+      <text x="20" y="44" fill="#64748b" font-size="9">Overpass API</text>
+      <text x="20" y="58" fill="#94a3b8" font-size="10">Factory locations • Industrial zones</text>
+    </g>
+
+    <!-- IoT -->
+    <g transform="translate(20, 450)">
+      <rect width="260" height="50" rx="8" fill="rgba(255,255,255,.03)" stroke="rgba(100,116,139,.3)" stroke-width="1" stroke-dasharray="4,4"/>
+      <text x="20" y="22" fill="#64748b" font-size="16">📶</text>
+      <text x="46" y="21" fill="#94a3b8" font-size="11">IoT Sensors (Future)</text>
+      <text x="20" y="38" fill="#64748b" font-size="9">Water quality sensors • Real-time data</text>
+    </g>
+  </g>
+
+  <!-- ═══════════════════════════════════════════════════════════════════ -->
+  <!-- TIER 2: PROCESSING (Center Column) -->
+  <!-- ═══════════════════════════════════════════════════════════════════ -->
+  <g transform="translate(410, 100)">
+    <rect width="380" height="510" rx="12" fill="rgba(14,165,233,.04)" stroke="rgba(14,165,233,.2)" stroke-width="2"/>
+    <text x="190" y="30" fill="#0ea5e9" font-size="13" font-weight="700" text-anchor="middle" letter-spacing="1.5">PROCESSING PIPELINE</text>
+
+    <!-- GEE Logo -->
+    <g transform="translate(120, 50)">
+      <rect width="140" height="36" rx="6" fill="rgba(14,165,233,.15)" stroke="rgba(14,165,233,.4)" stroke-width="1"/>
+      <text x="70" y="24" fill="#f1f5f9" font-size="11" font-weight="600" text-anchor="middle">☁️ Google Earth Engine</text>
+    </g>
+
+    <!-- Step 1: Spectral Indices -->
+    <g transform="translate(20, 100)">
+      <rect width="340" height="90" rx="8" fill="rgba(6,214,160,.06)" stroke="rgba(6,214,160,.25)" stroke-width="1" filter="url(#shadow)"/>
+      <circle cx="24" cy="20" r="12" fill="rgba(6,214,160,.2)" stroke="#06d6a0" stroke-width="1.5"/>
+      <text x="24" y="25" fill="#06d6a0" font-size="11" font-weight="700" text-anchor="middle">1</text>
+      <text x="46" y="24" fill="#f1f5f9" font-size="12" font-weight="600">Spectral Index Computation</text>
+      
+      <g transform="translate(15, 38)">
+        <rect width="100" height="22" rx="4" fill="rgba(239,68,68,.12)" stroke="rgba(239,68,68,.3)" stroke-width="1"/>
+        <text x="50" y="15" fill="#f87171" font-size="9" font-weight="500" text-anchor="middle">NDTI (Pollution)</text>
+      </g>
+      <g transform="translate(120, 38)">
+        <rect width="100" height="22" rx="4" fill="rgba(14,165,233,.12)" stroke="rgba(14,165,233,.3)" stroke-width="1"/>
+        <text x="50" y="15" fill="#38bdf8" font-size="9" font-weight="500" text-anchor="middle">MNDWI (Water)</text>
+      </g>
+      <g transform="translate(225, 38)">
+        <rect width="100" height="22" rx="4" fill="rgba(250,204,21,.12)" stroke="rgba(250,204,21,.3)" stroke-width="1"/>
+        <text x="50" y="15" fill="#fde047" font-size="9" font-weight="500" text-anchor="middle">NDWI (Extent)</text>
+      </g>
+      <text x="170" y="80" fill="#64748b" font-size="9" text-anchor="middle">Band math: (G-SWIR)/(G+SWIR), (G-NIR)/(G+NIR)</text>
+    </g>
+
+    <!-- Step 2: Change Detection -->
+    <g transform="translate(20, 200)">
+      <rect width="340" height="80" rx="8" fill="rgba(139,92,246,.06)" stroke="rgba(139,92,246,.25)" stroke-width="1" filter="url(#shadow)"/>
+      <circle cx="24" cy="20" r="12" fill="rgba(139,92,246,.2)" stroke="#a78bfa" stroke-width="1.5"/>
+      <text x="24" y="25" fill="#a78bfa" font-size="11" font-weight="700" text-anchor="middle">2</text>
+      <text x="46" y="24" fill="#f1f5f9" font-size="12" font-weight="600">Temporal Change Detection</text>
+      
+      <text x="20" y="48" fill="#94a3b8" font-size="10">• SAR coherence change (Δσ° > 3 dB)</text>
+      <text x="20" y="64" fill="#94a3b8" font-size="10">• Multi-year MNDWI comparison (2016 → 2024)</text>
+    </g>
+
+    <!-- Step 3: ML Classification -->
+    <g transform="translate(20, 290)">
+      <rect width="340" height="80" rx="8" fill="rgba(236,72,153,.06)" stroke="rgba(236,72,153,.25)" stroke-width="1" filter="url(#shadow)"/>
+      <circle cx="24" cy="20" r="12" fill="rgba(236,72,153,.2)" stroke="#f472b6" stroke-width="1.5"/>
+      <text x="24" y="25" fill="#f472b6" font-size="11" font-weight="700" text-anchor="middle">3</text>
+      <text x="46" y="24" fill="#f1f5f9" font-size="12" font-weight="600">ML Classification &amp; Attribution</text>
+      
+      <text x="20" y="48" fill="#94a3b8" font-size="10">• Random Forest pollution source classification</text>
+      <text x="20" y="64" fill="#94a3b8" font-size="10">• Factory attribution (OSM + inverse distance)</text>
+    </g>
+
+    <!-- Step 4: Prediction -->
+    <g transform="translate(20, 380)">
+      <rect width="340" height="80" rx="8" fill="rgba(250,204,21,.06)" stroke="rgba(250,204,21,.25)" stroke-width="1" filter="url(#shadow)"/>
+      <circle cx="24" cy="20" r="12" fill="rgba(250,204,21,.2)" stroke="#fde047" stroke-width="1.5"/>
+      <text x="24" y="25" fill="#fde047" font-size="11" font-weight="700" text-anchor="middle">4</text>
+      <text x="46" y="24" fill="#f1f5f9" font-size="12" font-weight="600">Prediction &amp; Risk Scoring</text>
+      
+      <text x="20" y="48" fill="#94a3b8" font-size="10">• Erosion rate estimation (historical + monsoon)</text>
+      <text x="20" y="64" fill="#94a3b8" font-size="10">• Household risk assessment (200m buffer)</text>
+    </g>
+
+    <!-- API Export -->
+    <g transform="translate(100, 470)">
+      <rect width="180" height="32" rx="6" fill="rgba(6,214,160,.1)" stroke="rgba(6,214,160,.3)" stroke-width="1"/>
+      <text x="90" y="21" fill="#06d6a0" font-size="10" font-weight="500" text-anchor="middle">📤 GeoJSON / Tile Export</text>
+    </g>
+  </g>
+
+  <!-- ═══════════════════════════════════════════════════════════════════ -->
+  <!-- TIER 3: APPLICATIONS (Right Column) -->
+  <!-- ═══════════════════════════════════════════════════════════════════ -->
+  <g transform="translate(860, 100)">
+    <rect width="300" height="510" rx="12" fill="rgba(139,92,246,.04)" stroke="rgba(139,92,246,.2)" stroke-width="2"/>
+    <text x="150" y="30" fill="#a78bfa" font-size="13" font-weight="700" text-anchor="middle" letter-spacing="1.5">APPLICATIONS</text>
+
+    <!-- Dashboard -->
+    <g transform="translate(20, 50)">
+      <rect width="260" height="90" rx="8" fill="rgba(6,214,160,.08)" stroke="rgba(6,214,160,.3)" stroke-width="1" filter="url(#shadow)"/>
+      <text x="20" y="28" fill="#06d6a0" font-size="22">📊</text>
+      <text x="52" y="26" fill="#f1f5f9" font-size="13" font-weight="600">Web Dashboard</text>
+      <text x="20" y="46" fill="#94a3b8" font-size="10">Interactive Leaflet maps</text>
+      <text x="20" y="60" fill="#94a3b8" font-size="10">Pollution heatmaps + factory markers</text>
+      <text x="20" y="74" fill="#94a3b8" font-size="10">Before/after encroachment views</text>
+    </g>
+
+    <!-- Alerts -->
+    <g transform="translate(20, 150)">
+      <rect width="260" height="90" rx="8" fill="rgba(239,68,68,.08)" stroke="rgba(239,68,68,.3)" stroke-width="1" filter="url(#shadow)"/>
+      <text x="20" y="28" fill="#f87171" font-size="22">🚨</text>
+      <text x="52" y="26" fill="#f1f5f9" font-size="13" font-weight="600">Alert System</text>
+      <text x="20" y="46" fill="#94a3b8" font-size="10">Real-time pollution spike detection</text>
+      <text x="20" y="60" fill="#94a3b8" font-size="10">Erosion early warning (2-4 weeks)</text>
+      <text x="20" y="74" fill="#94a3b8" font-size="10">SMS to village leaders &amp; agencies</text>
+    </g>
+
+    <!-- Reports -->
+    <g transform="translate(20, 250)">
+      <rect width="260" height="90" rx="8" fill="rgba(14,165,233,.08)" stroke="rgba(14,165,233,.3)" stroke-width="1" filter="url(#shadow)"/>
+      <text x="20" y="28" fill="#38bdf8" font-size="22">📋</text>
+      <text x="52" y="26" fill="#f1f5f9" font-size="13" font-weight="600">Regulatory Reports</text>
+      <text x="20" y="46" fill="#94a3b8" font-size="10">Factory attribution with confidence %</text>
+      <text x="20" y="60" fill="#94a3b8" font-size="10">Encroachment evidence (PDF export)</text>
+      <text x="20" y="74" fill="#94a3b8" font-size="10">Compliance tracking dashboard</text>
+    </g>
+
+    <!-- API -->
+    <g transform="translate(20, 350)">
+      <rect width="260" height="70" rx="8" fill="rgba(139,92,246,.08)" stroke="rgba(139,92,246,.3)" stroke-width="1" filter="url(#shadow)"/>
+      <text x="20" y="28" fill="#a78bfa" font-size="22">🔌</text>
+      <text x="52" y="26" fill="#f1f5f9" font-size="13" font-weight="600">REST API</text>
+      <text x="20" y="46" fill="#94a3b8" font-size="10">GeoJSON endpoints for integration</text>
+      <text x="20" y="60" fill="#94a3b8" font-size="10">BWDB, DoE, CEGIS partners</text>
+    </g>
+
+    <!-- Mobile (Future) -->
+    <g transform="translate(20, 430)">
+      <rect width="260" height="70" rx="8" fill="rgba(255,255,255,.03)" stroke="rgba(100,116,139,.3)" stroke-width="1" stroke-dasharray="4,4"/>
+      <text x="20" y="28" fill="#64748b" font-size="22">📱</text>
+      <text x="52" y="26" fill="#94a3b8" font-size="13" font-weight="500">Mobile App (Future)</text>
+      <text x="20" y="46" fill="#64748b" font-size="10">Citizen reporting • Photo upload</text>
+      <text x="20" y="60" fill="#64748b" font-size="10">Push notifications</text>
+    </g>
+  </g>
+
+  <!-- ═══════════════════════════════════════════════════════════════════ -->
+  <!-- CONNECTION ARROWS -->
+  <!-- ═══════════════════════════════════════════════════════════════════ -->
+  
+  <!-- Data → Processing -->
+  <g stroke="url(#teal)" stroke-width="2.5" fill="none" opacity=".7">
+    <path d="M 345 350 Q 380 350 410 350" marker-end="url(#arrow)" filter="url(#glow)"/>
+  </g>
+  <text x="378" y="336" fill="#06d6a0" font-size="9" font-weight="500">Ingest</text>
+
+  <!-- Processing → Applications -->
+  <g stroke="url(#blue)" stroke-width="2.5" fill="none" opacity=".7">
+    <path d="M 790 350 Q 825 350 860 350" marker-end="url(#arrowBlue)" filter="url(#glow)"/>
+  </g>
+  <text x="818" y="336" fill="#0ea5e9" font-size="9" font-weight="500">Publish</text>
+
+  <!-- Footer -->
+  <text x="600" y="670" fill="#475569" font-size="10" text-anchor="middle">NodiWatch • Eco-Tech Hackathon 2026 • All satellite data is free (ESA, USGS, EC-JRC)</text>
+</svg>

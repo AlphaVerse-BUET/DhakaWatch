@@ -1,0 +1,767 @@
+{
+  "corridors": [
+    {
+      "id": "E001",
+      "name": "Sirajganj Jamuna West Bank",
+      "river": "Jamuna",
+      "risk_level": "high",
+      "retreat_rate_m_year": 45.2,
+      "total_retreat_m": 452,
+      "population_at_risk": 8500,
+      "structures_at_risk": 320,
+      "coordinates": [
+        [
+          89.631,
+          24.47
+        ],
+        [
+          89.628,
+          24.466
+        ],
+        [
+          89.625,
+          24.461
+        ],
+        [
+          89.622,
+          24.457
+        ],
+        [
+          89.619,
+          24.453
+        ],
+        [
+          89.617,
+          24.448
+        ],
+        [
+          89.618,
+          24.444
+        ],
+        [
+          89.621,
+          24.44
+        ],
+        [
+          89.624,
+          24.436
+        ],
+        [
+          89.626,
+          24.43
+        ]
+      ],
+      "buffer_zone": {
+        "warning_m": 100,
+        "critical_m": 50
+      },
+      "analysis": {
+        "sar_coherence_pre_monsoon": 0.68,
+        "sar_coherence_post_monsoon": 0.31,
+        "coherence_change": -0.37,
+        "interpretation": "Major coherence loss indicates active bank collapse during monsoon"
+      },
+      "last_updated": "2025-12-15",
+      "trend": "accelerating",
+      "notes": "Jamuna braided channel shifts westward. Per Freihardt & Frey (2023) methodology, coherence < 0.4 indicates active erosion."
+    },
+    {
+      "id": "E002",
+      "name": "Sadarghat Erosion Zone",
+      "river": "Buriganga",
+      "risk_level": "high",
+      "retreat_rate_m_year": 12.5,
+      "total_retreat_m": 125,
+      "population_at_risk": 2400,
+      "structures_at_risk": 150,
+      "coordinates": [
+        [
+          90.3656709,
+          23.7079202
+        ],
+        [
+          90.3686857,
+          23.7070459
+        ],
+        [
+          90.3747904,
+          23.7069968
+        ],
+        [
+          90.3812814,
+          23.7073111
+        ],
+        [
+          90.3880405,
+          23.7083524
+        ],
+        [
+          90.3917527,
+          23.7096294
+        ],
+        [
+          90.393126,
+          23.7100027
+        ],
+        [
+          90.3957868,
+          23.7102385
+        ],
+        [
+          90.3981578,
+          23.7103465
+        ],
+        [
+          90.3990376,
+          23.7101599
+        ],
+        [
+          90.4000997,
+          23.7097669
+        ],
+        [
+          90.4011404,
+          23.7091923
+        ]
+      ],
+      "buffer_zone": {
+        "warning_m": 50,
+        "critical_m": 25
+      },
+      "analysis": {
+        "sar_coherence_pre_monsoon": 0.72,
+        "sar_coherence_post_monsoon": 0.42,
+        "coherence_change": -0.3,
+        "interpretation": "Moderate erosion along southern bank \u2014 worsened by industrial runoff weakening bank soil"
+      },
+      "last_updated": "2025-12-15",
+      "trend": "accelerating",
+      "notes": "Urban bank retreat estimated from MNDWI temporal differencing (Sentinel-2). No published SAR-based m/yr study for this segment; rate is a site-specific estimate. Boat wash and industrial effluent accelerate bank weakening."
+    },
+    {
+      "id": "E003",
+      "name": "Demra Bank Collapse Zone",
+      "river": "Shitalakshya",
+      "risk_level": "high",
+      "retreat_rate_m_year": 15.8,
+      "total_retreat_m": 158,
+      "population_at_risk": 1800,
+      "structures_at_risk": 92,
+      "coordinates": [
+        [
+          90.5062,
+          23.67
+        ],
+        [
+          90.507,
+          23.6745
+        ],
+        [
+          90.508,
+          23.6792
+        ],
+        [
+          90.5094,
+          23.6838
+        ],
+        [
+          90.5115,
+          23.6895
+        ],
+        [
+          90.5122,
+          23.6955
+        ],
+        [
+          90.5115,
+          23.7005
+        ],
+        [
+          90.5098,
+          23.7052
+        ],
+        [
+          90.5078,
+          23.7098
+        ],
+        [
+          90.5054,
+          23.7145
+        ]
+      ],
+      "buffer_zone": {
+        "warning_m": 60,
+        "critical_m": 30
+      },
+      "analysis": {
+        "sar_coherence_pre_monsoon": 0.65,
+        "sar_coherence_post_monsoon": 0.38,
+        "coherence_change": -0.27,
+        "interpretation": "Active bank collapse \u2014 SAR coherence drop correlated with monsoon discharge peaks"
+      },
+      "last_updated": "2025-12-15",
+      "trend": "accelerating",
+      "notes": "Highest estimated retreat rate in Dhaka metro area. Rate derived from MNDWI channel-width comparison; brick fields along bank accelerate undercutting. Not yet confirmed by peer-reviewed SAR study for this segment."
+    },
+    {
+      "id": "E004",
+      "name": "Gabtali Riverbank",
+      "river": "Turag",
+      "risk_level": "medium",
+      "retreat_rate_m_year": 8.2,
+      "total_retreat_m": 82,
+      "population_at_risk": 850,
+      "structures_at_risk": 45,
+      "coordinates": [
+        [
+          90.4219,
+          23.8878
+        ],
+        [
+          90.4159,
+          23.8859
+        ],
+        [
+          90.4119,
+          23.8828
+        ],
+        [
+          90.4067,
+          23.8817
+        ],
+        [
+          90.4023,
+          23.882
+        ],
+        [
+          90.3978,
+          23.8811
+        ],
+        [
+          90.3933,
+          23.8821
+        ],
+        [
+          90.3928,
+          23.885
+        ],
+        [
+          90.3893,
+          23.8924
+        ],
+        [
+          90.3854,
+          23.898
+        ]
+      ],
+      "buffer_zone": {
+        "warning_m": 40,
+        "critical_m": 20
+      },
+      "analysis": {
+        "sar_coherence_pre_monsoon": 0.78,
+        "sar_coherence_post_monsoon": 0.55,
+        "coherence_change": -0.23,
+        "interpretation": "Moderate erosion \u2014 partially stabilized by existing embankment"
+      },
+      "last_updated": "2025-12-15",
+      "trend": "stable",
+      "notes": "Estimated from MNDWI temporal differencing. Existing BWDB embankment provides partial protection. Erosion concentrated at unprotected sections."
+    },
+    {
+      "id": "E005",
+      "name": "Tongi Rail Bridge Adjacent",
+      "river": "Turag",
+      "risk_level": "low",
+      "retreat_rate_m_year": 3.5,
+      "total_retreat_m": 35,
+      "population_at_risk": 120,
+      "structures_at_risk": 8,
+      "coordinates": [
+        [
+          90.3499,
+          23.901
+        ],
+        [
+          90.3488,
+          23.9025
+        ],
+        [
+          90.3475,
+          23.9038
+        ],
+        [
+          90.3469,
+          23.9052
+        ],
+        [
+          90.3465,
+          23.9068
+        ],
+        [
+          90.3454,
+          23.9082
+        ],
+        [
+          90.3445,
+          23.9095
+        ],
+        [
+          90.3449,
+          23.911
+        ],
+        [
+          90.346,
+          23.9125
+        ],
+        [
+          90.3475,
+          23.9145
+        ]
+      ],
+      "buffer_zone": {
+        "warning_m": 30,
+        "critical_m": 15
+      },
+      "analysis": {
+        "sar_coherence_pre_monsoon": 0.82,
+        "sar_coherence_post_monsoon": 0.72,
+        "coherence_change": -0.1,
+        "interpretation": "Minor erosion \u2014 bridge pilings provide bank stability"
+      },
+      "last_updated": "2025-12-15",
+      "trend": "stable",
+      "notes": "Infrastructure provides natural bank protection. Low risk but requires continued monitoring."
+    },
+    {
+      "id": "E006",
+      "name": "Rajshahi Padma Left Bank",
+      "river": "Padma",
+      "risk_level": "high",
+      "retreat_rate_m_year": 18.5,
+      "total_retreat_m": 185,
+      "population_at_risk": 12000,
+      "structures_at_risk": 480,
+      "coordinates": [
+        [
+          88.55,
+          24.368
+        ],
+        [
+          88.565,
+          24.37
+        ],
+        [
+          88.58,
+          24.372
+        ],
+        [
+          88.6,
+          24.374
+        ],
+        [
+          88.62,
+          24.375
+        ],
+        [
+          88.64,
+          24.373
+        ],
+        [
+          88.655,
+          24.371
+        ],
+        [
+          88.67,
+          24.368
+        ],
+        [
+          88.68,
+          24.366
+        ],
+        [
+          88.69,
+          24.364
+        ],
+        [
+          88.7,
+          24.363
+        ]
+      ],
+      "buffer_zone": {
+        "warning_m": 120,
+        "critical_m": 60
+      },
+      "analysis": {
+        "sar_coherence_pre_monsoon": 0.71,
+        "sar_coherence_post_monsoon": 0.33,
+        "coherence_change": -0.38,
+        "interpretation": "Severe coherence loss along Padma left bank. Rajshahi city edge under active retreat. Alluvial soil highly susceptible to hydraulic scour during monsoon peak flows."
+      },
+      "last_updated": "2025-12-15",
+      "trend": "accelerating",
+      "notes": "Rajshahi is one of the most erosion-affected cities in Bangladesh. The Padma here concentrates erosive force on the outer (left) bank. BWDB revetment covers only ~40% of the threatened reach. Published retreat rates 10-25 m/yr (Islam & Guchhait 2017, Geomorphology)."
+    },
+    {
+      "id": "E007",
+      "name": "Fulchhari-Gaibandha Jamuna Right Bank",
+      "river": "Jamuna",
+      "risk_level": "high",
+      "retreat_rate_m_year": 72.0,
+      "total_retreat_m": 720,
+      "population_at_risk": 45000,
+      "structures_at_risk": 1800,
+      "coordinates": [
+        [
+          89.678,
+          25.28
+        ],
+        [
+          89.681,
+          25.265
+        ],
+        [
+          89.684,
+          25.25
+        ],
+        [
+          89.682,
+          25.235
+        ],
+        [
+          89.679,
+          25.22
+        ],
+        [
+          89.676,
+          25.205
+        ],
+        [
+          89.674,
+          25.19
+        ],
+        [
+          89.677,
+          25.175
+        ],
+        [
+          89.68,
+          25.16
+        ],
+        [
+          89.683,
+          25.145
+        ],
+        [
+          89.685,
+          25.125
+        ],
+        [
+          89.688,
+          25.11
+        ]
+      ],
+      "buffer_zone": {
+        "warning_m": 200,
+        "critical_m": 100
+      },
+      "analysis": {
+        "sar_coherence_pre_monsoon": 0.62,
+        "sar_coherence_post_monsoon": 0.19,
+        "coherence_change": -0.43,
+        "interpretation": "Extreme coherence loss \u2014 among the highest erosion rates globally. Jamuna braided channel migrates laterally at rates exceeding 70 m/year. Post-monsoon coherence below 0.2 indicates near-complete surface reorganization."
+      },
+      "last_updated": "2025-12-15",
+      "trend": "accelerating",
+      "notes": "Fulchhari/Gaibandha is internationally recognized as one of the world's most severe riverbank erosion zones. Jamuna braided planform creates extreme lateral instability. Published studies (Sarker et al. 2014, ESPL) document 50-100+ m/yr retreat rates. Over 500,000 people displaced in past three decades."
+    },
+    {
+      "id": "E008",
+      "name": "Bhola Island West Coast",
+      "river": "Meghna",
+      "risk_level": "high",
+      "retreat_rate_m_year": 15.0,
+      "total_retreat_m": 150,
+      "population_at_risk": 25000,
+      "structures_at_risk": 650,
+      "coordinates": [
+        [
+          90.618,
+          22.55
+        ],
+        [
+          90.619,
+          22.52
+        ],
+        [
+          90.621,
+          22.49
+        ],
+        [
+          90.623,
+          22.46
+        ],
+        [
+          90.625,
+          22.43
+        ],
+        [
+          90.627,
+          22.4
+        ],
+        [
+          90.629,
+          22.37
+        ],
+        [
+          90.63,
+          22.34
+        ],
+        [
+          90.632,
+          22.31
+        ],
+        [
+          90.633,
+          22.28
+        ]
+      ],
+      "buffer_zone": {
+        "warning_m": 150,
+        "critical_m": 75
+      },
+      "analysis": {
+        "sar_coherence_pre_monsoon": 0.66,
+        "sar_coherence_post_monsoon": 0.28,
+        "coherence_change": -0.38,
+        "interpretation": "Chronic coastal erosion driven by Meghna estuary tidal and fluvial forces. Combined wave action and monsoon discharge create year-round erosion pressure."
+      },
+      "last_updated": "2025-12-15",
+      "trend": "accelerating",
+      "notes": "Bhola Island has lost approximately 227 sq km since 1965 (Brammer 2014). Published retreat rates 8-25 m/yr. Over 500,000 climate refugees attributed to Bhola erosion over 50 years. Bangladesh's flagship case for climate displacement."
+    },
+    {
+      "id": "E009",
+      "name": "Shariatpur-Naria Padma Right Bank",
+      "river": "Padma",
+      "risk_level": "high",
+      "retreat_rate_m_year": 22.0,
+      "total_retreat_m": 220,
+      "population_at_risk": 15000,
+      "structures_at_risk": 520,
+      "coordinates": [
+        [
+          90.35,
+          23.28
+        ],
+        [
+          90.365,
+          23.27
+        ],
+        [
+          90.38,
+          23.26
+        ],
+        [
+          90.395,
+          23.25
+        ],
+        [
+          90.41,
+          23.24
+        ],
+        [
+          90.425,
+          23.23
+        ],
+        [
+          90.44,
+          23.22
+        ],
+        [
+          90.455,
+          23.21
+        ],
+        [
+          90.47,
+          23.2
+        ],
+        [
+          90.485,
+          23.19
+        ],
+        [
+          90.5,
+          23.18
+        ]
+      ],
+      "buffer_zone": {
+        "warning_m": 130,
+        "critical_m": 65
+      },
+      "analysis": {
+        "sar_coherence_pre_monsoon": 0.69,
+        "sar_coherence_post_monsoon": 0.3,
+        "coherence_change": -0.39,
+        "interpretation": "Active bank collapse along Padma right bank. Confluence dynamics with Meghna amplify erosive forces at this critical bend."
+      },
+      "last_updated": "2025-12-15",
+      "trend": "accelerating",
+      "notes": "Shariatpur/Naria sits on the Padma right bank upstream of the Padma-Meghna confluence. CEGIS erosion prediction maps consistently flag this as high-risk. Naria upazila has lost multiple villages in the past decade. Retreat rates 15-30 m/yr documented by BWDB."
+    },
+    {
+      "id": "E010",
+      "name": "Chandpur Meghna Confluence Bank",
+      "river": "Meghna",
+      "risk_level": "high",
+      "retreat_rate_m_year": 25.0,
+      "total_retreat_m": 250,
+      "population_at_risk": 18000,
+      "structures_at_risk": 420,
+      "coordinates": [
+        [
+          90.65,
+          23.23
+        ],
+        [
+          90.645,
+          23.215
+        ],
+        [
+          90.64,
+          23.2
+        ],
+        [
+          90.638,
+          23.185
+        ],
+        [
+          90.635,
+          23.17
+        ],
+        [
+          90.632,
+          23.155
+        ],
+        [
+          90.63,
+          23.14
+        ],
+        [
+          90.628,
+          23.125
+        ],
+        [
+          90.625,
+          23.11
+        ],
+        [
+          90.622,
+          23.095
+        ]
+      ],
+      "buffer_zone": {
+        "warning_m": 140,
+        "critical_m": 70
+      },
+      "analysis": {
+        "sar_coherence_pre_monsoon": 0.67,
+        "sar_coherence_post_monsoon": 0.26,
+        "coherence_change": -0.41,
+        "interpretation": "Severe erosion at Padma-Meghna confluence zone. Combined discharge from both rivers creates extreme hydraulic stress. Post-monsoon coherence well below 0.3 threshold."
+      },
+      "last_updated": "2025-12-15",
+      "trend": "accelerating",
+      "notes": "Chandpur sits at the critical Padma-Meghna confluence. Combined monsoon discharge creates some of Bangladesh's highest fluvial erosive forces. Published rates 20-35 m/yr (Sarker et al. 2013). BWDB revetment coverage is incomplete."
+    },
+    {
+      "id": "E011",
+      "name": "Hatiya Island South Coast",
+      "river": "Meghna Estuary",
+      "risk_level": "high",
+      "retreat_rate_m_year": 12.0,
+      "total_retreat_m": 120,
+      "population_at_risk": 8500,
+      "structures_at_risk": 210,
+      "coordinates": [
+        [
+          91.08,
+          22.16
+        ],
+        [
+          91.065,
+          22.145
+        ],
+        [
+          91.05,
+          22.13
+        ],
+        [
+          91.035,
+          22.12
+        ],
+        [
+          91.02,
+          22.11
+        ],
+        [
+          91.005,
+          22.1
+        ],
+        [
+          90.99,
+          22.09
+        ],
+        [
+          90.975,
+          22.08
+        ],
+        [
+          90.96,
+          22.07
+        ],
+        [
+          90.945,
+          22.065
+        ]
+      ],
+      "buffer_zone": {
+        "warning_m": 100,
+        "critical_m": 50
+      },
+      "analysis": {
+        "sar_coherence_pre_monsoon": 0.7,
+        "sar_coherence_post_monsoon": 0.35,
+        "coherence_change": -0.35,
+        "interpretation": "Coastal erosion from combined Meghna tidal forces and Bay of Bengal wave action. Southern shore retreating while northern accretion occurs near Nijhum Dwip."
+      },
+      "last_updated": "2025-12-15",
+      "trend": "accelerating",
+      "notes": "Hatiya Island faces asymmetric erosion-accretion dynamics. Southern coast loses 12 m/yr to tidal forces while northern chars accrete. Total island area is net-negative. SPARRSO satellite monitoring confirms ongoing pattern."
+    }
+  ],
+  "statistics": {
+    "total_corridors": 11,
+    "high_risk": 9,
+    "medium_risk": 1,
+    "low_risk": 1,
+    "total_population_at_risk": 137170,
+    "total_structures_at_risk": 4695,
+    "average_retreat_rate": 22.7,
+    "max_retreat_rate": 72.0
+  },
+  "methodology": {
+    "sensor": "Sentinel-1 SAR C-band (IW mode, VV polarization)",
+    "technique": "Pre/post monsoon coherence differencing",
+    "threshold": "Coherence < 0.4 = active erosion zone",
+    "analysis_period": "Pre-monsoon (Jan-Mar) vs Post-monsoon (Oct-Dec)",
+    "reference": "Freihardt & Frey (2023) - NHESS, DOI: 10.5194/nhess-23-751-2023",
+    "gee_tool": "https://doi.org/10.5281/zenodo.7252970",
+    "confidence_level": 0.85,
+    "data_sources": [
+      "Sentinel-1 SAR GRD (COPERNICUS/S1_GRD)",
+      "Sentinel-2 Optical (COPERNICUS/S2_SR_HARMONIZED)",
+      "SRTM DEM"
+    ]
+  }
+}

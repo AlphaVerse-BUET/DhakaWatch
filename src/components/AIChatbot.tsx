@@ -1,7 +1,7 @@
 "use client";
 
 /**
- * NodiWatch AI Chatbot
+ * DhakaWatch AI Chatbot
  * ====================
  * Floating chatbot widget that appears on all pages.
  * Powered by Gemini AI with specialized environmental knowledge.
@@ -37,7 +37,7 @@ const PAGE_CONTEXT: Record<string, { name: string; description: string }> = {
   "/": {
     name: "Dashboard",
     description:
-      "The main NodiWatch dashboard. Shows river health metrics (NDTI, encroachment count, erosion risk, rivers monitored), live river corridor map with pollution hotspots, encroachment boundaries and erosion zones, plus an automated enforcement alert pipeline overview.",
+      "The main DhakaWatch dashboard. Shows river health metrics (NDTI, encroachment count, erosion risk, rivers monitored), live river corridor map with pollution hotspots, encroachment boundaries and erosion zones, plus an automated enforcement alert pipeline overview.",
   },
   "/pollution": {
     name: "Pollution Monitor",
@@ -67,12 +67,12 @@ const PAGE_CONTEXT: Record<string, { name: string; description: string }> = {
   "/datasets": {
     name: "Datasets",
     description:
-      "The data sources page listing all satellite and ground datasets used by NodiWatch: Sentinel-2, Sentinel-1, Landsat, DEM, OpenStreetMap, and GEE-derived indices.",
+      "The data sources page listing all satellite and ground datasets used by DhakaWatch: Sentinel-2, Sentinel-1, Landsat, DEM, OpenStreetMap, and GEE-derived indices.",
   },
   "/about": {
-    name: "About NodiWatch",
+    name: "About DhakaWatch",
     description:
-      "About page for NodiWatch — the Eco-Tech Hackathon 2026 river surveillance platform by Team AlphaVerse. Shows the team, architecture, workflow, and methodology.",
+      "About page for DhakaWatch — an urban environmental intelligence platform by Team AlphaVerse. Shows the team, architecture, technology stack, and methodology.",
   },
   "/validation": {
     name: "Validation & Accuracy",
@@ -105,7 +105,7 @@ export default function AIChatbot() {
       id: "1",
       role: "assistant",
       content:
-        "Assalamu-'Alaikum! I'm NodiWatch AI, your river monitoring assistant for Bangladesh. I can help with pollution analysis, encroachment detection, erosion monitoring, and citizen reports. How can I help today?",
+        "Assalamu-'Alaikum! I'm DhakaWatch AI, your urban environmental intelligence assistant for Dhaka. I can help with river pollution, encroachment, erosion, urban heat islands, vegetation analysis, and citizen reports. How can I help today?",
       timestamp: new Date(),
     },
   ]);
@@ -128,9 +128,9 @@ export default function AIChatbot() {
   }, [isOpen]);
 
   const currentPage = PAGE_CONTEXT[pathname] || {
-    name: "NodiWatch",
+    name: "DhakaWatch",
     description:
-      "A NodiWatch page for river monitoring and environmental intelligence.",
+      "A DhakaWatch page for river monitoring and environmental intelligence.",
   };
 
   const buildPageContext = () =>
@@ -244,7 +244,7 @@ export default function AIChatbot() {
                 <Bot className="w-6 h-6 text-white" />
               </div>
               <div>
-                <h3 className="font-semibold text-white">NodiWatch AI</h3>
+                <h3 className="font-semibold text-white">DhakaWatch AI</h3>
                 <p className="text-xs text-white/70 flex items-center gap-1.5">
                   <span className="w-1.5 h-1.5 bg-green-400 rounded-full" />
                   {currentPage.name} · Page-aware
@@ -389,7 +389,7 @@ export default function AIChatbot() {
               </button>
             </div>
             <p className="text-[10px] text-slate-500 mt-2 text-center">
-              Powered by Gemini AI · Context-aware · NodiWatch v1.0
+              Powered by Gemini AI · Context-aware · DhakaWatch v1.0
             </p>
           </div>
         </div>

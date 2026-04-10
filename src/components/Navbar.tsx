@@ -51,11 +51,11 @@ export default function Navbar() {
             </div>
             <div>
               <h1 className="text-lg font-bold">
-                <span className="gradient-text">Nodi</span>
+                <span className="gradient-text">Dhaka</span>
                 <span className="text-white">Watch</span>
               </h1>
               <p className="text-[10px] text-slate-400 -mt-0.5 hidden sm:block">
-                River Surveillance System
+                Urban Environmental Intelligence
               </p>
             </div>
           </Link>

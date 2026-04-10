@@ -4,9 +4,11 @@ import {
   fetchRealFactories,
   generatePollutionHotspots,
   getCachedFactories,
+  haversineDistance,
   loadCachedData,
   type HotspotRecord,
 } from "@/lib/backend-parity";
+import { parseOptionalLatLngRadius } from "@/lib/route-query";
 
 export const runtime = "nodejs";
 export const dynamic = "force-dynamic";
@@ -16,6 +18,11 @@ export async function GET(request: NextRequest) {
   const { searchParams } = new URL(request.url);
   const river = searchParams.get("river");
   const severity = searchParams.get("severity");
+  const pointRadius = parseOptionalLatLngRadius(searchParams, 5);
+
+  if (pointRadius && "error" in pointRadius) {
+    return NextResponse.json({ detail: pointRadius.error }, { status: 400 });
+  }
 
   const cached = await loadCachedData<{ hotspots?: HotspotRecord[] }>(
     "real_pollution_hotspots.json",
@@ -35,6 +42,13 @@ export async function GET(request: NextRequest) {
   }
   if (severity) {
     hotspots = hotspots.filter((hotspot) => hotspot.severity === severity);
+  }
+  if (pointRadius) {
+    hotspots = hotspots.filter(
+      (hotspot) =>
+        haversineDistance(pointRadius.lat, pointRadius.lng, hotspot.lat, hotspot.lng) <=
+        pointRadius.radiusKm * 1000,
+    );
   }
 
   return NextResponse.json({

@@ -27,7 +27,8 @@ function parseLayer(raw: string | null): LayerQuery | null {
 
 export async function GET(request: NextRequest) {
   const { searchParams } = new URL(request.url);
-  const layerQuery = parseLayer(searchParams.get("layer"));
+  const rawLayer = searchParams.get("layer");
+  const layerQuery = rawLayer == null ? "uhi" : parseLayer(rawLayer);
   const periodOverride = searchParams.get("period");
 
   if (!layerQuery) {
@@ -61,6 +62,7 @@ export async function GET(request: NextRequest) {
 
     return NextResponse.json({
       layer: layerQuery,
+      layerDefaulted: rawLayer == null,
       period: periodOverride || sourcePayload.summary.period,
       generatedAt: new Date().toISOString(),
       summary: sourcePayload.summary,

@@ -11,7 +11,7 @@ export async function GET() {
     endpoints: {
       "/api/dynamic":
         "Real-time waterways + factories + hotspots for any Bangladesh bbox",
-      "/api/waterways": "Real OSM river/canal geometries for a bbox",
+      "/api/waterways": "Real OSM river/canal geometries — accepts bbox (south,west,north,east) or point-radius (lat,lng,radius km)",
       "/api/factories": "Real industrial facilities from OpenStreetMap",
       "/api/pollution": "Cached pollution hotspots with spectral indices",
       "/api/attribution": "Bayesian factory attribution for a hotspot",

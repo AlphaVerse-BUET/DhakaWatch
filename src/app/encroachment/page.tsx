@@ -343,7 +343,7 @@ export default function EncroachmentPage() {
                 How Encroachment Detection Works
               </h2>
               <p className="text-gray-300 mb-6 leading-relaxed">
-                NodiWatch uses Modified Normalized Difference Water Index
+                DhakaWatch uses Modified Normalized Difference Water Index
                 (MNDWI) to precisely delineate water boundaries. By comparing
                 decade-old imagery with current observations, we quantify
                 exactly how much river area has been lost to illegal filling and

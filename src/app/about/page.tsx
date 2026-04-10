@@ -134,16 +134,17 @@ export default function AboutPage() {
             <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-teal/10 border border-teal/30 mb-6">
               <Award size={16} className="text-teal" />
               <span className="text-teal text-sm font-medium">
-                Eco-Tech Hackathon 2026 • Team AlphaVerse
+                Team AlphaVerse • Dhaka, Bangladesh
               </span>
             </div>
             <h1 className="text-4xl lg:text-6xl font-bold mb-6">
-              <span className="gradient-text">About NodiWatch</span>
+              <span className="gradient-text">About DhakaWatch</span>
             </h1>
             <p className="text-xl text-gray-300 max-w-3xl mx-auto leading-relaxed">
-              An AI-powered satellite surveillance system for protecting
-              Bangladesh&apos;s <span className="text-red-400">major rivers</span>{" "}
-              from pollution, encroachment, and erosion.
+              An AI-powered urban environmental intelligence platform for
+              Dhaka — monitoring{" "}
+              <span className="text-red-400">river health, heat stress, and vegetation</span>{" "}
+              through satellite imagery, spectral analysis, and Gemini AI.
             </p>
           </div>
         </div>
@@ -162,8 +163,9 @@ export default function AboutPage() {
             <p className="text-gray-300">
               To leverage cutting-edge satellite technology and artificial
               intelligence to create an automated, transparent, and actionable
-              monitoring system that empowers authorities to protect
-              Bangladesh&apos;s vital river ecosystems.
+              urban environmental monitoring system — empowering Dhaka&apos;s
+              authorities to address river pollution, heat stress, encroachment,
+              erosion, and vegetation loss through data-driven enforcement.
             </p>
           </div>
 
@@ -175,10 +177,10 @@ export default function AboutPage() {
               <h2 className="text-2xl font-bold text-white">Our Vision</h2>
             </div>
             <p className="text-gray-300">
-              A future where every river in Bangladesh is continuously
-              monitored, violations are detected through automated satellite
-              surveillance, and environmental
-              accountability is strengthened through satellite-based evidence.
+              A future where Dhaka&apos;s rivers, green corridors, and urban
+              heat zones are continuously monitored — where violations are
+              detected automatically, and city planners and enforcement agencies
+              act on satellite-grade environmental intelligence in near real-time.
             </p>
           </div>
         </div>
@@ -286,7 +288,7 @@ export default function AboutPage() {
               </span>
             </div>
             <h2 className="text-2xl font-bold text-white mb-2">
-              How NodiWatch Works
+              How DhakaWatch Works
             </h2>
             <p className="text-gray-400 max-w-2xl mx-auto">
               End-to-end pipeline from satellite acquisition to actionable
@@ -297,7 +299,7 @@ export default function AboutPage() {
           <div className="relative overflow-hidden rounded-xl border border-slate-700/50">
             <img
               src="/assets/architecture_diagram.png"
-              alt="NodiWatch System Architecture"
+              alt="DhakaWatch System Architecture"
               className="w-full"
             />
           </div>
@@ -331,7 +333,7 @@ export default function AboutPage() {
                 Community Ground-Truth
               </h2>
               <p className="text-gray-300 mb-6 leading-relaxed">
-                NodiWatch empowers citizens to become environmental monitors.
+                DhakaWatch empowers citizens to become environmental monitors.
                 Upload photos from your smartphone and our Gemini AI instantly
                 analyzes them to validate satellite observations and support
                 environmental reporting.
@@ -391,30 +393,30 @@ export default function AboutPage() {
           </div>
         </div>
 
-        {/* Competition Info */}
+        {/* Contact */}
         <div className="glass-card p-8 text-center">
           <h2 className="text-2xl font-bold text-white mb-4">
-            Eco-Tech Hackathon 2026
+            Get in Touch
           </h2>
           <p className="text-gray-300 mb-6">
-            NodiWatch is developed as part of Phase 2 of the Eco-Tech Hackathon
-            2026, focusing on innovative solutions for environmental monitoring
-            and protection.
+            DhakaWatch is an open urban environmental intelligence initiative by
+            Team AlphaVerse — built to empower Dhaka&apos;s planners and
+            enforcement agencies with satellite-grade environmental data.
           </p>
           <div className="flex justify-center gap-4">
             <a
-              href="#"
-              className="px-6 py-3 bg-teal text-slate-900 rounded-lg font-semibold hover:bg-teal/90 transition-colors flex items-center gap-2"
-            >
-              <ExternalLink size={18} />
-              View Project Page
-            </a>
-            <a
               href="mailto:team@nodiwatch.com"
-              className="px-6 py-3 bg-white/10 text-white rounded-lg font-semibold hover:bg-white/20 transition-colors flex items-center gap-2"
+              className="px-6 py-3 bg-teal text-slate-900 rounded-lg font-semibold hover:bg-teal/90 transition-colors flex items-center gap-2"
             >
               <Mail size={18} />
               Contact Us
+            </a>
+            <a
+              href="#"
+              className="px-6 py-3 bg-white/10 text-white rounded-lg font-semibold hover:bg-white/20 transition-colors flex items-center gap-2"
+            >
+              <ExternalLink size={18} />
+              View on GitHub
             </a>
           </div>
         </div>

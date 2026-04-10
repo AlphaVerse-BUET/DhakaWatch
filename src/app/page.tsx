@@ -34,30 +34,30 @@ export default function HomePage() {
             <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-teal-500/10 border border-teal-500/25 text-teal-300">
               <Sparkles className="w-4 h-4" />
               <span className="text-xs font-semibold tracking-[0.28em] uppercase">
-                Eco-Tech Hackathon 2026 • Team AlphaVerse
+                Satellite-Powered • Gemini AI • Google Earth Engine
               </span>
             </div>
 
             <div className="space-y-5 max-w-4xl mx-auto">
               <h1 className="text-5xl lg:text-7xl font-bold leading-tight text-white">
-                NodiWatch
-                <span className="block gradient-text mt-3">
-                  AI River Surveillance System
+                <span className="block gradient-text">
+                  Urban Environmental
                 </span>
+                Intelligence
               </h1>
               <p className="text-lg lg:text-2xl text-slate-300 leading-relaxed max-w-3xl mx-auto">
-                A satellite-powered platform that detects pollution, tracks
-                encroachment, and monitors erosion across Bangladesh&apos;s rivers
-                using spectral analysis, SAR, and AI-driven attribution.
+                A satellite-powered urban monitoring platform — tracking river
+                pollution, encroachment, erosion, heat stress, and vegetation
+                loss across Dhaka using spectral analysis, SAR, and Gemini AI.
               </p>
             </div>
 
             <div className="flex flex-wrap justify-center gap-4">
               <Link
-                href="#river-dashboard"
+                href="#city-pulse"
                 className="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-gradient-to-r from-teal-500 to-blue-500 text-white font-semibold shadow-lg shadow-teal-500/20"
               >
-                Explore River Dashboard
+                Explore City Pulse
                 <ArrowRight className="w-4 h-4" />
               </Link>
               <Link
@@ -81,27 +81,27 @@ export default function HomePage() {
                 <p className="text-xs uppercase tracking-[0.25em] text-slate-500 mb-2">
                   Urgent
                 </p>
-                <p className="text-2xl font-bold text-white">87%</p>
+                <p className="text-2xl font-bold text-white">80%</p>
                 <p className="text-sm text-slate-400">
-                  Average detection accuracy across satellite monitoring models
+                  Route submergence likelihood on one flood-prone corridor
                 </p>
               </div>
               <div className="glass-card p-4 text-left">
                 <p className="text-xs uppercase tracking-[0.25em] text-slate-500 mb-2">
                   Today
                 </p>
-                <p className="text-2xl font-bold text-white">45</p>
+                <p className="text-2xl font-bold text-white">142</p>
                 <p className="text-sm text-slate-400">
-                  Industrial facilities tracked via OpenStreetMap Overpass API
+                  Bangla and English citizen reports triaged into the briefing queue
                 </p>
               </div>
               <div className="glass-card p-4 text-left">
                 <p className="text-xs uppercase tracking-[0.25em] text-slate-500 mb-2">
                   Coverage
                 </p>
-                <p className="text-2xl font-bold text-white">6</p>
+                <p className="text-2xl font-bold text-white">26</p>
                 <p className="text-sm text-slate-400">
-                  Major rivers monitored — Buriganga, Turag, Shitalakshya, and more
+                  Canals and lakes tracked across the pilot city perimeter
                 </p>
               </div>
             </div>
@@ -109,7 +109,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      <section id="river-dashboard" className="py-10 lg:py-14">
+      <section id="city-pulse" className="py-10 lg:py-14">
         <div className="container mx-auto px-4">
           <div className="grid grid-cols-1 lg:grid-cols-4 gap-4">
             {dhakaPulseCards.map((card) => (
@@ -124,10 +124,10 @@ export default function HomePage() {
           <div className="glass-card p-5">
             <div className="flex items-center justify-between flex-wrap gap-3 mb-4">
               <h2 className="text-xl font-semibold text-white">
-                Satellite Monitoring Modules
+                Urban Intelligence Modules
               </h2>
               <span className="text-xs text-slate-400">
-                Satellite layers powered by Google Earth Engine
+                Additive modules powered by Earth Engine
               </span>
             </div>
             <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-3">
@@ -186,11 +186,11 @@ export default function HomePage() {
                     Interactive Map
                   </p>
                   <h2 className="text-2xl font-bold text-white">
-                    Live River Corridor View
+                    Live Ward-Level City View
                   </h2>
                   <p className="text-sm text-slate-400 mt-2 max-w-2xl">
-                    Toggle pollution hotspots, encroachment boundaries, and
-                    erosion zones to inspect river corridors.
+                    Toggle heat, blue-green, and flood layers to inspect the
+                    city like an operational digital twin.
                   </p>
                 </div>
                 <div className="hidden md:flex items-center gap-2 text-xs text-slate-400">
@@ -211,10 +211,10 @@ export default function HomePage() {
                 <div className="flex items-center justify-between">
                   <div>
                     <p className="text-xs uppercase tracking-[0.28em] text-teal-300 mb-1">
-                      River Monitoring Layers
+                      City Layers
                     </p>
                     <h3 className="text-lg font-semibold text-white">
-                      Monitoring Signals
+                      Operational Signals
                     </h3>
                   </div>
                   <TriangleAlert className="w-5 h-5 text-orange-300" />
@@ -302,7 +302,7 @@ export default function HomePage() {
                   Automation Loop
                 </p>
                 <h3 className="text-xl font-semibold text-white">
-                  Automated Enforcement Alert Pipeline
+                  n8n-style response chain
                 </h3>
                 <p className="text-sm text-slate-400">
                   When flood risk crosses the threshold, the demo can trigger a

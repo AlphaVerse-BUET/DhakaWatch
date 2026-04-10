@@ -17,16 +17,17 @@ export default function Footer() {
             <Link href="/" className="flex items-center gap-2">
               <Waves className="w-6 h-6 text-teal" />
               <span className="text-lg font-bold">
-                <span className="gradient-text">Nodi</span>
+                <span className="gradient-text">Dhaka</span>
                 <span className="text-white">Watch</span>
               </span>
             </Link>
             <p className="text-sm text-slate-400">
-              AI-powered satellite surveillance for Bangladesh&apos;s rivers —
-              monitoring pollution, encroachment, and erosion
+              AI-powered urban environmental intelligence for Dhaka —
+              monitoring rivers, heat stress, vegetation, and city-scale
+              environmental threats via satellite
             </p>
             <p className="text-xs text-slate-500">
-              &copy; 2026 Team AlphaVerse. Eco-Tech Hackathon.
+              &copy; 2026 Team AlphaVerse. All rights reserved.
             </p>
           </div>
 
@@ -142,10 +143,10 @@ export default function Footer() {
 
         <div className="mt-8 pt-8 border-t border-white/5 flex flex-col sm:flex-row justify-between items-center gap-4">
           <p className="text-xs text-slate-500">
-            Built for Eco-Tech Hackathon 2026 — River surveillance platform demo by Team AlphaVerse
+            Urban environmental intelligence platform by Team AlphaVerse
           </p>
           <div className="flex items-center gap-4">
-            <span className="badge badge-teal">Phase 2 Finalist</span>
+            <span className="badge badge-teal">Live Demo</span>
           </div>
         </div>
       </div>

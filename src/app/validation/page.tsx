@@ -175,7 +175,7 @@ export default function ValidationPage() {
               <span className="text-green-400">Validation</span>
             </h1>
             <p className="text-lg text-gray-300 max-w-3xl mx-auto leading-relaxed">
-              Transparent methodology and validation results for NodiWatch&apos;s
+              Transparent methodology and validation results for DhakaWatch&apos;s
               satellite-based classification models. We believe in honest
               reporting of both capabilities and limitations.
             </p>

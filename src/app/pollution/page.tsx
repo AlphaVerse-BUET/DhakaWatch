@@ -469,7 +469,7 @@ export default function PollutionPage() {
                 How Pollution Detection Works
               </h2>
               <p className="text-gray-300 mb-6 leading-relaxed">
-                NodiWatch uses the Normalized Difference Turbidity Index (NDTI)
+                DhakaWatch uses the Normalized Difference Turbidity Index (NDTI)
                 derived from Sentinel-2 multispectral imagery to detect water
                 quality anomalies. Combined with CDOM (Green/Blue ratio) and
                 Red/Blue band ratios, we classify pollution cluster types.

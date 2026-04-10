@@ -1,38 +1,42 @@
 import {
+  Activity,
   Droplets,
-  Factory,
-  LandPlot,
-  Mountain,
+  ShieldAlert,
+  Sparkles,
+  Trees,
   Waves,
 } from "lucide-react";
 import type { Alert } from "@/components/AlertsPanel";
 
 export const dhakaPulseCards = [
   {
-    title: "Buriganga NDTI Index",
-    value: "0.31",
-    subtitle: "Moderate-high turbidity — tannery discharge risk",
-    icon: Droplets,
+    title: "Current AQI",
+    value: "168",
+    subtitle: "Unhealthy for sensitive groups",
+    icon: Activity,
     color: "red" as const,
+    change: { value: 6, isPositive: false },
   },
   {
-    title: "Active Encroachment Sites",
-    value: "12",
-    subtitle: "Confirmed illegal land-fill boundaries detected",
-    icon: LandPlot,
+    title: "Urban Heat Gap",
+    value: "+3.8°C",
+    subtitle: "Old Dhaka vs. Ramna green belt",
+    icon: Sparkles,
     color: "orange" as const,
+    change: { value: 3, isPositive: false },
   },
   {
-    title: "Erosion Risk Corridors",
-    value: "5",
-    subtitle: "High-risk SAR-confirmed bank retreat zones",
-    icon: Mountain,
-    color: "yellow" as const,
+    title: "Waterlogging Risk",
+    value: "High",
+    subtitle: "Drainage bottlenecks detected in pilot wards",
+    icon: Droplets,
+    color: "blue" as const,
+    change: { value: 11, isPositive: false },
   },
   {
-    title: "Rivers Monitored",
-    value: "6",
-    subtitle: "Buriganga, Turag, Shitalakshya, Balu, Dhaleshwari, Jamuna",
+    title: "Canals & Lakes Monitored",
+    value: "26",
+    subtitle: "Hatirjheel, Banani Lake, and major khals",
     icon: Waves,
     color: "teal" as const,
   },
@@ -40,63 +44,63 @@ export const dhakaPulseCards = [
 
 export const dhakaCityLayers = [
   {
-    title: "Pollution Layer",
+    title: "Heat Layer",
     description:
-      "NDTI, CDOM and Red/Blue ratio fingerprinting identifies industrial discharge hotspots at 10m resolution.",
-    icon: Factory,
-    accent: "from-red-500/20 to-orange-500/10",
+      "Pinpoints urban heat islands across dense wards and construction-heavy corridors.",
+    icon: Sparkles,
+    accent: "from-orange-500/20 to-red-500/10",
   },
   {
-    title: "Encroachment Layer",
+    title: "Blue-Green Layer",
     description:
-      "MNDWI temporal differencing compares 2016 vs 2026 water boundaries to detect illegal land filling.",
-    icon: LandPlot,
-    accent: "from-purple-500/20 to-pink-500/10",
+      "Tracks NDVI, canal health, and vegetation buffers around drainage networks.",
+    icon: Trees,
+    accent: "from-teal-500/20 to-blue-500/10",
   },
   {
-    title: "Erosion Layer",
+    title: "Flood Layer",
     description:
-      "Sentinel-1 SAR coherence analysis detects riverbank retreat from pre/post-monsoon radar backscatter.",
-    icon: Mountain,
-    accent: "from-orange-500/20 to-yellow-500/10",
+      "Highlights low-lying roads and sinks likely to submerge after short rain bursts.",
+    icon: ShieldAlert,
+    accent: "from-blue-500/20 to-cyan-500/10",
   },
 ];
 
 export const dhakaAlerts: Alert[] = [
   {
-    id: "NW-001",
+    id: "DW-001",
     type: "critical",
-    title: "High NDTI detected in Buriganga",
-    location: "Hazaribagh industrial zone",
+    title: "Drainage blockage detected",
+    location: "Dhanmondi 27, Ward 15",
     time: "12 min ago",
     description:
-      "Tannery discharge spectral signature confirmed via NDTI > 0.35 and elevated CDOM in latest Sentinel-2 pass.",
+      "Citizen photo and rainfall routing model point to a high submergence risk within the next 30 minutes.",
   },
   {
-    id: "NW-002",
+    id: "DW-002",
     type: "warning",
-    title: "Encroachment boundary shift",
-    location: "Turag river — Tongi sector",
+    title: "Canal narrowing observed",
+    location: "Ramchandrapur Khal corridor",
     time: "31 min ago",
     description:
-      "MNDWI temporal differencing shows 8m narrowing of water boundary compared to 2016 baseline.",
+      "Before/after imagery suggests a measurable reduction in water surface area near new construction.",
   },
   {
-    id: "NW-003",
+    id: "DW-003",
     type: "info",
-    title: "Erosion monitoring update",
-    location: "Jamuna corridor, Sirajganj",
+    title: "Cool corridor performing well",
+    location: "Ramna green belt",
     time: "1 hour ago",
     description:
-      "SAR coherence analysis shows moderate bank retreat; no immediate structural risk flagged.",
+      "Vegetation retention and lower surface temperatures remain above the city baseline.",
   },
   {
-    id: "NW-004",
+    id: "DW-004",
     type: "success",
-    title: "Citizen evidence validated",
-    location: "Buriganga, Kamrangirchar",
+    title: "Citizen report triaged",
+    location: "Banani Lake edge",
     time: "2 hours ago",
     description:
-      "Photo evidence classified as solid waste discharge by Gemini Vision and routed to enforcement queue.",
+      "Uploaded evidence was classified as solid waste and routed into the daily mayor briefing queue.",
   },
 ];

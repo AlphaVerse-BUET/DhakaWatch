@@ -400,7 +400,7 @@ export default function EvidencePage() {
                 href="/about"
                 className="px-6 py-3 rounded-xl bg-slate-800 text-white font-medium hover:bg-slate-700 transition-colors border border-slate-700"
               >
-                Learn About NodiWatch
+                Learn About DhakaWatch
               </Link>
               <Link
                 href="/datasets"
